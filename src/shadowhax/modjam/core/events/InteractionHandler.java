@@ -7,6 +7,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
@@ -25,13 +26,12 @@ public class InteractionHandler {
 		if (event.useItem != null) {
 
 			EntityPlayer player = event.entityPlayer;
-			ItemStack stack = event.entityPlayer.getHeldItem();
+			ItemStack stack = event.entityLiving.getHeldItem();
 
 			if (stack.itemID == Items.unlinkedCrystal.itemID && event.entityPlayer.worldObj.getBlockId(event.x, event.y, event.z) == Blocks.warpBlock.blockID){
 				int x = event.x;
 				int y = event.y;
 				int z = event.z;
-				stack.stackTagCompound.setInteger("linkX", x);
 			}
 		}
 	}
