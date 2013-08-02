@@ -17,7 +17,8 @@ public class ModJam {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent evt) {
 		
-		
+		// Init Shadows Test Stuff
+		new ShadowTest();
 	}
 	
 	@Mod.EventHandler
