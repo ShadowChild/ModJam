@@ -11,16 +11,19 @@ public class Items {
 		addNames();
 	}
 	
-	public static Item warpCrystal;
+	public static Item unlinkedCrystal;
+	public static Item linkedCrystal;
 	
 	public static void addItems() {
 		
-		warpCrystal = new ItemWarpCrystal(5337);
+		linkedCrystal = new ItemLinkedCrystal(5336);
+		unlinkedCrystal = new ItemUnlinkedCrystal(5337);
 	}
 	
 	public static void addNames() {
 		
-		LanguageRegistry.addName(warpCrystal, "Warp Crystal");
+		LanguageRegistry.addName(linkedCrystal, "Linked Crystal");
+		LanguageRegistry.addName(unlinkedCrystal, "Unlinked Crystal");
 	}
 
 }
