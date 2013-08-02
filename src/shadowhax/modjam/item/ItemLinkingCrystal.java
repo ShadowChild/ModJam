@@ -111,4 +111,21 @@ public class ItemLinkingCrystal extends Item{
     public static void sendChat() {
     	FMLClientHandler.instance().getClient().thePlayer.sendChatToPlayer(new ChatMessageComponent().func_111077_e("\u00a74Warning: This effect will not work in creative mode!"));
     }
+    
+    @Override
+    public String getItemDisplayName(ItemStack stack) {
+    	
+    	switch(stack.getItemDamage()) {
+    	
+    	case 0: {
+    		
+    		return "Unlinked Crystal";
+    	}
+    	
+    	default: {
+    		
+    		return "Linked Crystal";
+    	}
+    	}
+    }
 }

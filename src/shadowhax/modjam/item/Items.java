@@ -20,7 +20,7 @@ public class Items {
 	
 	public static void addNames() {
 		
-		LanguageRegistry.addName(unlinkedCrystal, "Unlinked Crystal");
+//		LanguageRegistry.addName(unlinkedCrystal, "Unlinked Crystal");
 	}
 
 }
