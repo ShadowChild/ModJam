@@ -12,15 +12,16 @@ public class Items {
 	}
 	
 	public static Item unlinkedCrystal;
+	public static Item rawCrystal;
 	
 	public static void addItems() {
 		
-		unlinkedCrystal = new ItemLinkingCrystal(5337).setUnlocalizedName("notlinked");
+		rawCrystal = new ItemRawCrystal(5331).setUnlocalizedName("rawCrystal");
+		unlinkedCrystal = new ItemLinkingCrystal(5337).setUnlocalizedName("warping");
 	}
 	
 	public static void addNames() {
 		
-//		LanguageRegistry.addName(unlinkedCrystal, "Unlinked Crystal");
 	}
 
 }
