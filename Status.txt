@@ -1,5 +1,5 @@
 Just a small friendly text pad where we can edit and add things. 
 
 Darkhax: Sleeping
-ShadowChild: Out
+ShadowChild: Not Coding
 ThisGuy: Sleeping
