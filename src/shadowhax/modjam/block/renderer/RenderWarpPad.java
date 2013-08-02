@@ -22,7 +22,7 @@ public class RenderWarpPad extends TileEntitySpecialRenderer
     	this.func_110628_a(new ResourceLocation("shadowhax:/textures/tileentity/warppad.png"));
         GL11.glPushMatrix();
         GL11.glTranslatef((float)d + 0.5F, (float)d1 + 0.5F, (float)d2 + 0.5F);
-        aModel.render(null, 1.00F, 1.00F, 1.00F, 1.00F, 1.00F, 1.00F);
+        aModel.render(null, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.02F);
         GL11.glPopMatrix();                    
     }
 
