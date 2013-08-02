@@ -22,40 +22,30 @@ public class ItemLinkingCrystal extends Item{
 		this.setCreativeTab(ModJam.tab);
 		this.hasSubtypes = true;
 	}
-	
-	private int posX;
-	private int posY;
-	private int posZ;
-	
-    public void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean par5) {
-    	
-    	stack.setTagCompound(new NBTTagCompound());
-    	posX = stack.stackTagCompound.getInteger("linkX");
-    	posY = stack.stackTagCompound.getInteger("linkY");
-    	posZ = stack.stackTagCompound.getInteger("linkZ");
-    }
-	
+
     public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {   	
 
-    	if (stack.getItemDamage() == 0){        	
-        	if (world.getBlockId(x, y, z) == Blocks.warpBlock.blockID) {
-            	stack.stackTagCompound.setInteger("linkX", x);
-            	stack.stackTagCompound.setInteger("linkY", y);
-            	stack.stackTagCompound.setInteger("linkZ", z);
-            	
-            	stack.setItemDamage(1);
-        	}
-    	}
-    	
     	if (stack.getItemDamage() == 1) {
+    		int posX = stack.stackTagCompound.getInteger("linkX");
+    		int posY = stack.stackTagCompound.getInteger("linkY");
+    		int posZ = stack.stackTagCompound.getInteger("linkZ");
+    		
     		if(world.getBlockId(posX, posY, posZ) == Blocks.warpBlock.blockID){
-    			player.posX = this.posX;
-    			player.posY = this.posY;
-    			player.posZ = this.posZ;
     			player.setPositionAndUpdate(posX, posY, posZ);
     			--stack.stackSize;
     		}
     	}
+    	
+    	if (stack.getItemDamage() == 0){        	
+        	if (world.getBlockId(x, y, z) == Blocks.warpBlock.blockID) {
+            	stack.setTagCompound(new NBTTagCompound());
+            	stack.stackTagCompound.setInteger("linkX", x);
+            	stack.stackTagCompound.setInteger("linkY", y);
+            	stack.stackTagCompound.setInteger("linkZ", z);      	
+            	stack.setItemDamage(1);
+        	}
+    	}
+    	
         return true;
     }
     
