@@ -3,6 +3,7 @@ package shadowhax.modjam.item;
 import java.util.List;
 import java.util.Random;
 
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -15,6 +16,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
@@ -54,11 +56,15 @@ public class ItemLinkingCrystal extends Item{
     	
     	if (stack.getItemDamage() == 0){        	
         	if (world.getBlockId(x, y, z) == Blocks.warpBlock.blockID) {
-        		
+                if (player.capabilities.isCreativeMode) {
+                	if (!world.isRemote) {
+                	    sendChat();
+                	}
+                }
             	stack.setTagCompound(new NBTTagCompound());
             	stack.stackTagCompound.setInteger("linkX", x);
             	stack.stackTagCompound.setInteger("linkY", y);
-            	stack.stackTagCompound.setInteger("linkZ", z);      	
+            	stack.stackTagCompound.setInteger("linkZ", z);      
             	stack.setItemDamage(1);
         	}
     	}
@@ -97,8 +103,12 @@ public class ItemLinkingCrystal extends Item{
     }
     
     @SideOnly(Side.CLIENT)
-    public boolean hasEffect(ItemStack stack)
-    {
+    public boolean hasEffect(ItemStack stack) {
         return stack.getItemDamage() > 0;
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public static void sendChat() {
+    	FMLClientHandler.instance().getClient().thePlayer.sendChatToPlayer(new ChatMessageComponent().func_111077_e("\u00a74Warning: This effect will not work in creative mode!"));
     }
 }
