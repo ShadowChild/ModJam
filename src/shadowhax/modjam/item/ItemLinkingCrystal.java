@@ -61,6 +61,7 @@ public class ItemLinkingCrystal extends Item{
                 	    sendChat();
                 	}
                 }
+                
             	stack.setTagCompound(new NBTTagCompound());
             	stack.stackTagCompound.setInteger("linkX", x);
             	stack.stackTagCompound.setInteger("linkY", y);
