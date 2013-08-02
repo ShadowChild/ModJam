@@ -25,8 +25,8 @@ public class ItemLinkingCrystal extends Item{
 		this.hasSubtypes = true;
 	}
 	
-    private Icon[] field_94594_d;
-    public static final String[] types = new String[] {"linked", "unlinked"};
+    private Icon[] icons = new Icon[256];
+    public static String[] types = new String[] {"linked", "unlinked"};
 
     public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {   	
 
@@ -56,13 +56,29 @@ public class ItemLinkingCrystal extends Item{
     
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
     	if (stack.getItemDamage() == 0) {
-    		list.add("\u00a75Right click on a warp block to tune this crystal to it. ");
+    		list.add("\u00a75Right click on a warp block");
+    		list.add("\u00a75to tune this crystal to it.");
     	}
     	
     	if (stack.getItemDamage() == 1) {
-    		list.add("Right click to be warped to " + stack.stackTagCompound.getInteger("linkX") + " , " + stack.stackTagCompound.getInteger("linkY") + " , " + stack.stackTagCompound.getInteger("linkZ") );
+    		list.add("Right click to be warped to ");
+    		list.add("x value of " + stack.stackTagCompound.getInteger("linkX"));
+    		list.add("y value of " + stack.stackTagCompound.getInteger("linkY"));
+    		list.add("z value of " + stack.stackTagCompound.getInteger("linkZ"));
+    		list.add("Will Be Consumed On User");
     	}
+    }
+    
+    @Override
+    public void registerIcons(IconRegister ir) {
     	
+    	this.icons[1] = ir.registerIcon("shadowhax:linked");
+    	this.icons[0] = ir.registerIcon("shadowhax:unlinked");
+    }
+    
+    @Override
+    public Icon getIconFromDamage(int damage) {
     	
+    	return icons[damage];
     }
 }
