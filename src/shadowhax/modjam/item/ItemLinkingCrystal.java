@@ -1,6 +1,7 @@
 package shadowhax.modjam.item;
 
 import java.util.List;
+import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -28,41 +29,32 @@ public class ItemLinkingCrystal extends Item{
     private Icon[] icons = new Icon[256];
     public static String[] types = new String[] {"linked", "unlinked"};
 
-    @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
     	
     	if (stack.getItemDamage() == 1) {
+    		
     		int posX = stack.stackTagCompound.getInteger("linkX");
     		int posY = stack.stackTagCompound.getInteger("linkY");
     		int posZ = stack.stackTagCompound.getInteger("linkZ");
     		
     		if(world.getBlockId(posX, posY, posZ) == Blocks.warpBlock.blockID){
+    			world.playSoundEffect(player.posX, player.posY, player.posZ, "mob.endermen.portal", 1.0F, 1.0F);
     			player.setPositionAndUpdate(posX, posY, posZ);
+    			world.playSoundEffect(posX, posY, posZ, "mob.endermen.portal", 1.0F, 1.0F);
     			--stack.stackSize;
     		}
     	}
-    	
     	return stack;
     }
     
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {   	
-
-//    	if (stack.getItemDamage() == 1) {
-//    		int posX = stack.stackTagCompound.getInteger("linkX");
-//    		int posY = stack.stackTagCompound.getInteger("linkY");
-//    		int posZ = stack.stackTagCompound.getInteger("linkZ");
-//    		
-//    		if(world.getBlockId(posX, posY, posZ) == Blocks.warpBlock.blockID){
-//    			player.setPositionAndUpdate(posX, posY, posZ);
-//    			--stack.stackSize;
-//    		}
-//    	}
     	
     	onItemRightClick(stack, world, player);
     	
     	if (stack.getItemDamage() == 0){        	
         	if (world.getBlockId(x, y, z) == Blocks.warpBlock.blockID) {
+        		
             	stack.setTagCompound(new NBTTagCompound());
             	stack.stackTagCompound.setInteger("linkX", x);
             	stack.stackTagCompound.setInteger("linkY", y);
@@ -76,11 +68,13 @@ public class ItemLinkingCrystal extends Item{
     
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
     	if (stack.getItemDamage() == 0) {
+    		
     		list.add("\u00a75Right click on a warp block");
     		list.add("\u00a75to tune this crystal to it.");
     	}
     	
     	if (stack.getItemDamage() == 1) {
+    		
     		list.add("Right click to be warped to ");
     		list.add("x value of " + stack.stackTagCompound.getInteger("linkX"));
     		list.add("y value of " + stack.stackTagCompound.getInteger("linkY"));
@@ -100,5 +94,11 @@ public class ItemLinkingCrystal extends Item{
     public Icon getIconFromDamage(int damage) {
     	
     	return icons[damage];
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public boolean hasEffect(ItemStack stack)
+    {
+        return stack.getItemDamage() > 0;
     }
 }
