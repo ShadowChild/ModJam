@@ -8,8 +8,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
@@ -38,6 +40,23 @@ public class BlockWarpCrystal extends BlockContainer
         return false;
     }
     
+
+	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
+
+		float var5 = 0.0625F;
+		return AxisAlignedBB.getAABBPool().getAABB((double)((float)par2 + var5), (double) var5, (double)((float)var5), (double)((float)(par2 + 1) - var5), (double)((float)(par3 + 0.7) - var5), (double)((float)(par4 + 1) - var5));
+	}
+
+	public AxisAlignedBB getSelectedBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
+
+		float var5 = 0.0625F;
+		return AxisAlignedBB.getAABBPool().getAABB((double)((float)par2 + var5), (double)((float) var5), (double)((float)par4 + var5), (double)((float)(par2 + 1) - var5), (double)((float)par3+1-var5), (double)((float)(par4 + 1) - var5));
+	}
+	
+	public int getMobilityFlag() {
+
+		return 3;
+	}
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister ir) {	
