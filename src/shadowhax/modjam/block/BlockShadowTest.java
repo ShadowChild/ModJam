@@ -10,7 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import shadowhax.modjam.ModJam;
-import shadowhax.modjam.block.tile.TileEntityShadowTest;
+import shadowhax.modjam.block.tile.TileEntityBase;
 import shadowhax.modjam.core.proxy.ClientProxy;
 
 public class BlockShadowTest extends Block implements ITileEntityProvider {
@@ -25,7 +25,7 @@ public class BlockShadowTest extends Block implements ITileEntityProvider {
 	@Override
 	public TileEntity createNewTileEntity(World world) {
 	
-		return new TileEntityShadowTest();
+		return new TileEntityBase();
 	}
 	
 	@Override
@@ -37,15 +37,15 @@ public class BlockShadowTest extends Block implements ITileEntityProvider {
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
 		
-		TileEntityShadowTest tile;
+		TileEntityBase tile;
 		
 		if(!world.isRemote && !player.isSneaking()) {
 			
-			tile = (TileEntityShadowTest)world.getBlockTileEntity(x, y, z);
+			tile = (TileEntityBase)world.getBlockTileEntity(x, y, z);
 			tile.modifyEnergy(200);
 		} else if(!world.isRemote && player.isSneaking()) {
 			
-			tile = (TileEntityShadowTest)world.getBlockTileEntity(x, y, z);
+			tile = (TileEntityBase)world.getBlockTileEntity(x, y, z);
 			System.out.println(tile.getCurrentEnergyStored());
 		}
 		
@@ -78,16 +78,16 @@ public class BlockShadowTest extends Block implements ITileEntityProvider {
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random rand) {
 		
-		TileEntityShadowTest tile;
-		TileEntityShadowTest transferTile;
+		TileEntityBase tile;
+		TileEntityBase transferTile;
 		
 		if(!world.isRemote) {
 			
-			tile = (TileEntityShadowTest)world.getBlockTileEntity(x, y, z);
+			tile = (TileEntityBase)world.getBlockTileEntity(x, y, z);
 			
 			for(ForgeDirection dir : ForgeDirection.values()) {
 				
-				transferTile = (TileEntityShadowTest)world.getBlockTileEntity(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
+				transferTile = (TileEntityBase)world.getBlockTileEntity(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
 				
 				if(transferTile != null) {
 					

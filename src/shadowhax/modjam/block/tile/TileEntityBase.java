@@ -9,11 +9,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import shadowhax.modjam.energy.IEnergyStorageBlock;
 
-public class TileEntityShadowTest extends TileEntity implements IEnergyStorageBlock {
+public class TileEntityBase extends TileEntity implements IEnergyStorageBlock {
 
 	private int currentEnergy;
 	
-	public TileEntityShadowTest() {
+	public TileEntityBase() {
 		
 		super();
 //		createAndLoadEntity(new NBTTagCompound());
