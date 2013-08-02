@@ -24,7 +24,7 @@ public class ItemRawCrystal extends Item{
 	}
 	
 	public static String[] rawCrystalNames = new String[] {"Simplex", "Lux", "Ros", "Natura", "Obitus", "Ignis", "Zephyr"};
-	private Icon[] icons;
+	private Icon[] icons = new Icon[256];
 	
     @Override
     public String getItemDisplayName(ItemStack stack) {
@@ -49,5 +49,11 @@ public class ItemRawCrystal extends Item{
         for (int j = 0; j < 7; ++j) {
             list.add(new ItemStack(par1, 1, j));
         }
+    }
+    
+    @Override
+    public Icon getIconFromDamage(int damage) {
+    	
+    	return this.icons[damage];
     }
 }
