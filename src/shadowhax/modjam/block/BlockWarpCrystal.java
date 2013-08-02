@@ -15,6 +15,7 @@ public class BlockWarpCrystal extends BlockContainer
     	
         super(par1, Material.glass);
         this.setCreativeTab(ModJam.tab);
+        this.setLightOpacity(0);
     }
     
     @Override

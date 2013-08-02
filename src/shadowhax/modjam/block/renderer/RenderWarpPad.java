@@ -22,15 +22,13 @@ public class RenderWarpPad extends TileEntitySpecialRenderer
         GL11.glPushMatrix();
         GL11.glTranslatef((float)d + 0.5F, (float)d1 + 0.5F, (float)d2 + 0.5F);
         GL11.glPushMatrix();
-        aModel.render(null, 0.0625F, f, f, f, f, f);
+        aModel.render(null, 0.0625F, 0.0625F, 0.0625F, 0.0625F, 0.0625F, 0.0625F);
         GL11.glPopMatrix();    
         GL11.glPopMatrix();                    
     }
 
 
-	public void renderTileEntityAt(TileEntity tileentity, double d, double d1, double d2,
-            float f)
-    {
+	public void renderTileEntityAt(TileEntity tileentity, double d, double d1, double d2, float f) {
         renderAModelAt((TileEntityWarpPad)tileentity, d, d1, d2, f);
     }
  
