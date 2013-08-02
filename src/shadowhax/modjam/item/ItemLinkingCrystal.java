@@ -56,7 +56,7 @@ public class ItemLinkingCrystal extends Item{
     
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
     	if (stack.getItemDamage() == 0) {
-    		list.add("e");
+    		list.add(e);
     	}
     	
     	
