@@ -28,18 +28,14 @@ public class ItemWarpCrystal extends Item {
 	public static int warpY;
 	public static int warpZ;
 	
-	public void onUpdate(ItemStack stack, World world, Entity wntity, int par4, boolean par5) {
-		
-		if (!stack.stackTagCompound.hasKey("linkX")){
-			stack.stackTagCompound.setInteger("linkX", 0);
-			stack.stackTagCompound.setInteger("linkY", 0);
-			stack.stackTagCompound.setInteger("linkZ", 0);
-		}
-		
-		warpX = stack.stackTagCompound.getInteger("linkX");
-		warpY = stack.stackTagCompound.getInteger("linkY");
-		warpZ = stack.stackTagCompound.getInteger("linkZ");
-	}
+    public boolean onItemUse(ItemStack stack, EntityPlayer playerlayer, World world, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
+    {
+    	if (warpX = 0)
+    	warpX = stack.stackTagCompound.getInteger("linkX");
+    	warpY = stack.stackTagCompound.getInteger("linkY");
+    	warpZ = stack.stackTagCompound.getInteger("linkZ");
+    	return true;
+    }
     
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
     	
