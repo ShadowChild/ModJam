@@ -5,6 +5,7 @@ import java.util.Arrays;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import shadowhax.modjam.block.Blocks;
+import shadowhax.modjam.core.proxy.ClientProxy;
 import shadowhax.modjam.core.proxy.CommonProxy;
 import shadowhax.modjam.item.Items;
 import shadowhax.modjam.util.Reference;
@@ -36,6 +37,7 @@ public class ModJam {
 		new ShadowTest(); //test
 		Blocks.init(); //Not sure if shadow wants things done this way, if not change it. 
 		Items.init(); //Same with this.
+		ClientProxy.render();
 	}
 	
 	@Mod.EventHandler

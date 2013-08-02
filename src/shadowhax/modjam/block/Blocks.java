@@ -1,5 +1,6 @@
 package shadowhax.modjam.block;
 
+import shadowhax.modjam.tileentity.TileEntityWarpPad;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
@@ -12,6 +13,7 @@ public class Blocks {
 		
 		addBlocks();
 		registerBlocks();
+		registerTileEntities();
 		addNames();
 	}
 	
@@ -28,5 +30,9 @@ public class Blocks {
 	public static void addNames() {
 		
 		LanguageRegistry.addName(warpBlock, "Warp Block");
+	}
+	
+	public static void registerTileEntities(){
+		GameRegistry.registerTileEntity(TileEntityWarpPad.class, "warpBlock");
 	}
 }
