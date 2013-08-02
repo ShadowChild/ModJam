@@ -28,11 +28,10 @@ public class InteractionHandler {
 			ItemStack stack = event.entityPlayer.getHeldItem();
 
 			if (stack.itemID == Items.unlinkedCrystal.itemID && event.entityPlayer.worldObj.getBlockId(event.x, event.y, event.z) == Blocks.warpBlock.blockID){
-				stack.stackTagCompound.setInteger("linkX", event.x);
-				stack.stackTagCompound.setInteger("linkY", event.y);
-				stack.stackTagCompound.setInteger("linkz", event.z);
-				
-				--stack.stackSize
+				int x = event.x;
+				int y = event.y;
+				int z = event.z;
+				stack.stackTagCompound.setInteger("linkX", x);
 			}
 		}
 	}

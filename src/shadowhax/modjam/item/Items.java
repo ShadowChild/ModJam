@@ -16,8 +16,8 @@ public class Items {
 	
 	public static void addItems() {
 		
-		linkedCrystal = new ItemLinkedCrystal(5336);
-		unlinkedCrystal = new ItemUnlinkedCrystal(5337);
+		linkedCrystal = new ItemLinkedCrystal(5336).setUnlocalizedName("linked");
+		unlinkedCrystal = new ItemUnlinkedCrystal(5337).setUnlocalizedName("notlinked");
 	}
 	
 	public static void addNames() {
