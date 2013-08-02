@@ -26,6 +26,8 @@ public class ItemWarpCrystal extends Item {
 	public static double warpX;
 	public static double warpY;
 	public static double warpZ;
+	
+	
     
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
     	
