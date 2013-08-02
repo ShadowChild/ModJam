@@ -7,11 +7,11 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid = Reference.id, name = Reference.name, version = Reference.version)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class ModJam {
 
-	@Mod.Instance(Reference.id)
+	@Mod.Instance(Reference.MOD_ID)
 	public static ModJam instance;
 	
 	@Mod.EventHandler

@@ -2,10 +2,10 @@ package shadowhax.modjam.util;
 
 public class Reference {
 
-	public static final String id = "ShadowHax_ModJam"; // TODO: Change Later
-	public static final String name = "ShadowHax_ModJam"; // TODO: Change Later
-	public static final String version = "v1 indev";
+	public static final String MOD_ID = "ShadowHax_ModJam"; // TODO: Change Later
+	public static final String MOD_NAME = "ShadowHax_ModJam"; // TODO: Change Later
+	public static final String MOD_VERSION = "v1 indev";
 	
-	public static final String client = ""; //For proxy once set up
-	public static final String server = "";
+	public static final String CLIENT_PROXY = "";
+	public static final String SERVER_PROXY = "";
 }
