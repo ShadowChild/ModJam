@@ -1,4 +1,5 @@
 Just a small friendly text pad where we can edit and add things. 
 
-Darkhax: Coding
-ShadowChild: Sleep
+Darkhax: Sleeping
+ShadowChild: Coding
+ThisGuy: Sleeping
