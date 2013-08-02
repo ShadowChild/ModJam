@@ -6,7 +6,7 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public interface IEnergyCell {
 
-	int getMaxEnergyStored(ItemStack stack, EntityPlayer player);
+	int getMaxEnergyStored(ItemStack stack);
 	
-	int getCurrentStored(ItemStack stack, NBTTagCompound nbt);
+	int getCurrentStored(ItemStack stack);
 }
