@@ -1,3 +1,4 @@
 Just a small friendly text pad where we can edit and add things. 
 
-Darkhax: Bathroom
+Darkhax: Coding
+ShadowChild: Sleep
