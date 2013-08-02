@@ -23,4 +23,18 @@ public class BlockWarpCrystal extends BlockContainer
     	
         return new TileEntityWarpPad();
     }
+    
+    public boolean isOpaqueCube() {
+        return false;
+    }
+    
+    public boolean renderAsNormalBlock() {
+        return false;
+    }
+    
+    public int getRenderType() {
+        return 24;
+    }
+    
+    
 }

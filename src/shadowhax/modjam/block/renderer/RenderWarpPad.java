@@ -2,6 +2,7 @@ package shadowhax.modjam.block.renderer;
  
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
@@ -21,9 +22,7 @@ public class RenderWarpPad extends TileEntitySpecialRenderer
     	this.func_110628_a(new ResourceLocation("shadowhax:/textures/tileentity/warppad.png"));
         GL11.glPushMatrix();
         GL11.glTranslatef((float)d + 0.5F, (float)d1 + 0.5F, (float)d2 + 0.5F);
-        GL11.glPushMatrix();
-        aModel.render(null, 0.0625F, 0.0625F, 0.0625F, 0.0625F, 0.0625F, 0.0625F);
-        GL11.glPopMatrix();    
+        aModel.render(null, 0.00F, 0.00F, 0.00F, 0.00F, 0.00F, 0.00F);
         GL11.glPopMatrix();                    
     }
 
