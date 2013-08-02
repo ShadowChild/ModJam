@@ -24,7 +24,7 @@ public class Blocks {
 	
 	public static void registerBlocks() {
 		
-		GameRegistry.registerBlock(warpBlock);
+		GameRegistry.registerBlock(warpBlock, "warpBlock");
 	}
 	
 	public static void addNames() {
