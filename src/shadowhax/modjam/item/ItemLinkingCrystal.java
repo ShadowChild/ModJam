@@ -28,8 +28,9 @@ public class ItemLinkingCrystal extends Item{
     private Icon[] icons = new Icon[256];
     public static String[] types = new String[] {"linked", "unlinked"};
 
-    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {   	
-
+    @Override
+    public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
+    	
     	if (stack.getItemDamage() == 1) {
     		int posX = stack.stackTagCompound.getInteger("linkX");
     		int posY = stack.stackTagCompound.getInteger("linkY");
@@ -40,6 +41,25 @@ public class ItemLinkingCrystal extends Item{
     			--stack.stackSize;
     		}
     	}
+    	
+    	return stack;
+    }
+    
+    @Override
+    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {   	
+
+//    	if (stack.getItemDamage() == 1) {
+//    		int posX = stack.stackTagCompound.getInteger("linkX");
+//    		int posY = stack.stackTagCompound.getInteger("linkY");
+//    		int posZ = stack.stackTagCompound.getInteger("linkZ");
+//    		
+//    		if(world.getBlockId(posX, posY, posZ) == Blocks.warpBlock.blockID){
+//    			player.setPositionAndUpdate(posX, posY, posZ);
+//    			--stack.stackSize;
+//    		}
+//    	}
+    	
+    	onItemRightClick(stack, world, player);
     	
     	if (stack.getItemDamage() == 0){        	
         	if (world.getBlockId(x, y, z) == Blocks.warpBlock.blockID) {
@@ -65,7 +85,7 @@ public class ItemLinkingCrystal extends Item{
     		list.add("x value of " + stack.stackTagCompound.getInteger("linkX"));
     		list.add("y value of " + stack.stackTagCompound.getInteger("linkY"));
     		list.add("z value of " + stack.stackTagCompound.getInteger("linkZ"));
-    		list.add("Will Be Consumed On User");
+    		list.add("Will Be Consumed On Use");
     	}
     }
     
