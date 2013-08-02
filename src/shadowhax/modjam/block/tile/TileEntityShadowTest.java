@@ -4,15 +4,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 import shadowhax.modjam.energy.IEnergyStorageBlock;
 
 public class TileEntityShadowTest extends TileEntity implements IEnergyStorageBlock {
 
-	private int currentEnergy = 0;
+	private int currentEnergy;
 	
-	public TileEntityShadowTest(World world) {
+	public TileEntityShadowTest() {
 		
 		super();
+//		createAndLoadEntity(new NBTTagCompound());
 	}
 
 	@Override
@@ -41,5 +43,33 @@ public class TileEntityShadowTest extends TileEntity implements IEnergyStorageBl
 		super.writeToNBT(nbt);
 		
 		nbt.setInteger("EnergyStored", currentEnergy);
+	}
+
+	@Override
+	public void modifyEnergy(int amount) {
+
+		this.currentEnergy += amount;
+
+		System.out.println(currentEnergy);
+	}
+
+	@Override
+	public void transferEnergy(ForgeDirection direction) {
+		
+		TileEntity neighborBlock;
+		IEnergyStorageBlock transferBlock;
+		
+		neighborBlock = worldObj.getBlockTileEntity(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ);
+		
+		if(neighborBlock != null && neighborBlock instanceof IEnergyStorageBlock) {
+			
+			transferBlock = (IEnergyStorageBlock)neighborBlock;
+			
+			while(this.currentEnergy > transferBlock.getCurrentEnergyStored()) {
+				
+				this.modifyEnergy(-1);
+				transferBlock.modifyEnergy(1);
+			}
+		}
 	}
 }

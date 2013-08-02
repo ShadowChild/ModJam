@@ -16,6 +16,7 @@ public class ShadowTest {
 	
 	private void registerTE() {
 		
+		GameRegistry.registerBlock(testBlock, "testBlock");
 		GameRegistry.registerTileEntity(TileEntityShadowTest.class, "shadowtest");
 	}
 

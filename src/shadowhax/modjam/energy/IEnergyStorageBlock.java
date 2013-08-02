@@ -1,7 +1,7 @@
 package shadowhax.modjam.energy;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
 public interface IEnergyStorageBlock {
 
@@ -10,4 +10,8 @@ public interface IEnergyStorageBlock {
 	int getMaxEnergyStored();
 	
 	int getCurrentEnergyStored();
+	
+	void modifyEnergy(int amount);
+	
+	void transferEnergy(ForgeDirection direction);
 }

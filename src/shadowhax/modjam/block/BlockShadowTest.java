@@ -3,28 +3,72 @@ package shadowhax.modjam.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
+import shadowhax.modjam.ModJam;
 import shadowhax.modjam.block.tile.TileEntityShadowTest;
-import shadowhax.modjam.energy.IEnergyStorageBlock;
+import shadowhax.modjam.core.proxy.ClientProxy;
 
 public class BlockShadowTest extends Block implements ITileEntityProvider {
 
 	public BlockShadowTest(int par1) {
 		
 		super(par1, Material.rock);
+		this.setCreativeTab(ModJam.tab);
 	}
 
 	@Override
 	public TileEntity createNewTileEntity(World world) {
 	
-		return new TileEntityShadowTest(world);
+		return new TileEntityShadowTest();
 	}
 	
 	@Override
 	public String getLocalizedName() {
 		
 		return "Shadows Test Block";
+	}
+	
+	@Override
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
+		
+		TileEntityShadowTest tile;
+		
+		if(!world.isRemote && !player.isSneaking()) {
+			
+			tile = (TileEntityShadowTest)world.getBlockTileEntity(x, y, z);
+			tile.modifyEnergy(200);
+		} else if(!world.isRemote && player.isSneaking()) {
+			
+			tile = (TileEntityShadowTest)world.getBlockTileEntity(x, y, z);
+			System.out.println(tile.getCurrentEnergyStored());
+		}
+		
+		return false;
+	}
+	
+	@Override
+	public void onBlockAdded(World world, int x, int y, int z) {
+		
+		TileEntityShadowTest tile;
+		TileEntityShadowTest transferTile;
+		
+		if(!world.isRemote) {
+			
+			tile = (TileEntityShadowTest)world.getBlockTileEntity(x, y, z);
+			
+			for(ForgeDirection dir : ForgeDirection.values()) {
+				
+				transferTile = (TileEntityShadowTest)world.getBlockTileEntity(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
+				
+				if(transferTile != null) {
+					
+					transferTile.transferEnergy(dir.getOpposite());
+					break;
+				}
+			}
+		}
 	}
 }
