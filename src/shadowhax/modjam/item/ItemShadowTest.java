@@ -19,7 +19,7 @@ public class ItemShadowTest extends Item implements IEnergyCell {
 		super(par1);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(ModJam.tab);
-		this.setMaxDamage(getMaxEnergyStored(new ItemStack(this, 0, 0)));
+		this.setMaxDamage(getMaxEnergyStored(null));
 	}
 
 	@Override
@@ -106,17 +106,5 @@ public class ItemShadowTest extends Item implements IEnergyCell {
 		}
 		
 		return stack;
-	}
-	
-	@Override
-	public int getDamage(ItemStack stack) {
-		
-		if(stack.getTagCompound() == null) {
-			
-			stack.setTagCompound(new NBTTagCompound());
-			stack.getTagCompound().setInteger("CurrentEnergy", 0);
-		}
-		
-		return getMaxEnergyStored(stack) - stack.getTagCompound().getInteger("CurrentEnergy");
 	}
 }
