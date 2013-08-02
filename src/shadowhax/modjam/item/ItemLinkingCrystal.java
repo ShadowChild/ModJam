@@ -26,11 +26,12 @@ public class ItemLinkingCrystal extends Item{
 		super(id);
 		this.setCreativeTab(ModJam.tab);
 		this.hasSubtypes = true;
+		this.setMaxStackSize(1);
 	}
 	
     private Icon[] icons = new Icon[256];
     public static String[] types = new String[] {"linked", "unlinked"};
-
+    
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
     	
     	if (stack.getItemDamage() == 1) {
