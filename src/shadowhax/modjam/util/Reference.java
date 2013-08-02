@@ -6,6 +6,6 @@ public class Reference {
 	public static final String MOD_NAME = "ShadowHax_ModJam"; // TODO: Change Later
 	public static final String MOD_VERSION = "v1 indev";
 	
-	public static final String CLIENT_PROXY = "shadowhax.core.proxy.ClientProxy";
-	public static final String SERVER_PROXY = "shadowhax.core.proxy.CommonProxy";
+	public static final String CLIENT_PROXY = "shadowhax.modjam.core.proxy.ClientProxy";
+	public static final String SERVER_PROXY = "shadowhax.midjam.core.proxy.CommonProxy";
 }
