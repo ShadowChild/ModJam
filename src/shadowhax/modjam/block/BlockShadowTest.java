@@ -1,5 +1,7 @@
 package shadowhax.modjam.block;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -17,6 +19,7 @@ public class BlockShadowTest extends Block implements ITileEntityProvider {
 		
 		super(par1, Material.rock);
 		this.setCreativeTab(ModJam.tab);
+		this.setTickRandomly(true);
 	}
 
 	@Override
@@ -51,6 +54,29 @@ public class BlockShadowTest extends Block implements ITileEntityProvider {
 	
 	@Override
 	public void onBlockAdded(World world, int x, int y, int z) {
+		
+//		TileEntityShadowTest tile;
+//		TileEntityShadowTest transferTile;
+//		
+//		if(!world.isRemote) {
+//			
+//			tile = (TileEntityShadowTest)world.getBlockTileEntity(x, y, z);
+//			
+//			for(ForgeDirection dir : ForgeDirection.values()) {
+//				
+//				transferTile = (TileEntityShadowTest)world.getBlockTileEntity(x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ);
+//				
+//				if(transferTile != null) {
+//					
+//					transferTile.transferEnergy(dir.getOpposite());
+//					break;
+//				}
+//			}
+//		}
+	}
+	
+	@Override
+	public void updateTick(World world, int x, int y, int z, Random rand) {
 		
 		TileEntityShadowTest tile;
 		TileEntityShadowTest transferTile;

@@ -1,5 +1,7 @@
 package shadowhax.modjam.block.tile;
 
+import java.util.Random;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -65,7 +67,7 @@ public class TileEntityShadowTest extends TileEntity implements IEnergyStorageBl
 			
 			transferBlock = (IEnergyStorageBlock)neighborBlock;
 			
-			while(this.currentEnergy > transferBlock.getCurrentEnergyStored()) {
+			while(this.currentEnergy > 0) {
 				
 				this.modifyEnergy(-1);
 				transferBlock.modifyEnergy(1);
