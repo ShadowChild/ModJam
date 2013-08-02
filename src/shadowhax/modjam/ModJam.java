@@ -1,5 +1,6 @@
 package shadowhax.modjam;
 
+import net.minecraft.creativetab.CreativeTabs;
 import shadowhax.modjam.util.Reference;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -13,6 +14,8 @@ public class ModJam {
 
 	@Mod.Instance(Reference.MOD_ID)
 	public static ModJam instance;
+	
+	public static CreativeTabs tab = new CreativeTabCustom();
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent evt) {

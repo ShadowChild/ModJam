@@ -7,6 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import shadowhax.modjam.ModJam;
 import shadowhax.modjam.energy.IEnergyCell;
 
 public class ItemShadowTest extends Item implements IEnergyCell {
@@ -15,7 +16,7 @@ public class ItemShadowTest extends Item implements IEnergyCell {
 		
 		super(par1);
 		this.setMaxStackSize(1);
-		this.setCreativeTab(CreativeTabs.tabMisc);
+		this.setCreativeTab(ModJam.tab);
 		this.setMaxDamage(getMaxEnergyStored(new ItemStack(this, 0, 0)));
 	}
 
