@@ -3,6 +3,7 @@ package shadowhax.modjam;
 import java.util.Arrays;
 
 import net.minecraft.creativetab.CreativeTabs;
+import shadowhax.modjam.block.Blocks;
 import shadowhax.modjam.core.proxy.CommonProxy;
 import shadowhax.modjam.util.Reference;
 import cpw.mods.fml.common.Mod;
@@ -31,6 +32,7 @@ public class ModJam {
 		getModMeta(evt.getModMetadata());
 		
 		new ShadowTest(); //test
+		Blocks.init(); //Not sure if shadow wants things done this way, if not change it. 
 	}
 	
 	@Mod.EventHandler
