@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 public class Blocks {
 	
 	public static Block warpBlock;
+	public static Block[] wires; 
 	
 	public static void init() {
 		
