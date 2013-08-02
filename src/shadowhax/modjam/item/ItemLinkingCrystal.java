@@ -56,7 +56,11 @@ public class ItemLinkingCrystal extends Item{
     
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
     	if (stack.getItemDamage() == 0) {
-    		list.add(e);
+    		list.add("\u00a75Right click on a warp block to tune this crystal to it. ");
+    	}
+    	
+    	if (stack.getItemDamage() == 1) {
+    		list.add("Right click to be warped to " + stack.stackTagCompound.getInteger("linkX") + " , " + stack.stackTagCompound.getInteger("linkY") + " , " + stack.stackTagCompound.getInteger("linkZ") );
     	}
     	
     	
