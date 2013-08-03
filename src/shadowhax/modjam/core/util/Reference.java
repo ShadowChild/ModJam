@@ -1,4 +1,4 @@
-package shadowhax.modjam.util;
+package shadowhax.modjam.core.util;
 
 public class Reference {
 
