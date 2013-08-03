@@ -12,7 +12,7 @@ import shadowhax.modjam.block.tile.TileEntityEnergyStorage;
 import shadowhax.modjam.energy.IEnergyStorageBlock;
 import shadowhax.modjam.enums.EnumEnergyType;
 import shadowhax.modjam.item.ItemEnergyDestoyer;
-import shadowhax.modjam.item.ItemRefinedCrystal;
+import shadowhax.modjam.item.ItemRawCrystal;
 
 public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider {
 
@@ -52,7 +52,7 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
 
                         item = player.getCurrentEquippedItem().getItem();
 
-                        if(item != null && item instanceof ItemRefinedCrystal) {
+                        if(item != null && item instanceof ItemRawCrystal) {
 
                             if(!(theTile.getCurrentEnergyStored() + 200 > theTile.getMaxEnergyStored())) {
 
