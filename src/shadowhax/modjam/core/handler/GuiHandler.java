@@ -5,9 +5,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import shadowhax.modjam.block.Blocks;
+import shadowhax.modjam.client.gui.CrystalBookGui;
 import shadowhax.modjam.client.gui.RefinedTableGui;
 import shadowhax.modjam.core.util.Config;
 import shadowhax.modjam.inventory.ContainerRefiningTable;
+import shadowhax.modjam.item.Items;
 
 public class GuiHandler implements IGuiHandler {
 
@@ -18,6 +20,11 @@ public class GuiHandler implements IGuiHandler {
 
 		if (world.getBlockId(x, y, z) == Config.refiningTableID){
 			return id == Config.guiRefiningID && world.getBlockId(x, y, z) == Blocks.refiningTable.blockID ? new ContainerRefiningTable(player.inventory, world, x, y, z) : null;
+		}
+		
+		if (id == Config.guiCrystalBookID){
+			
+			return new CrystalBookGui(world, player);
 		}
 		
 		return false;
@@ -32,10 +39,11 @@ public class GuiHandler implements IGuiHandler {
 			return id == Config.guiRefiningID && world.getBlockId(x, y, z) == Blocks.refiningTable.blockID ? new RefinedTableGui(player.inventory, world, x, y, z) : null;
 		}
 		
-		if (player.getHeldItem().itemID == Config.crystalBookID){
+		if (id == Config.crystalBookID){
 			
-//			return id == 2 && player.getHeldItem().itemID == Items.crystalBook.itemID ? new CrystalBookGui(player) : null;
+			return new CrystalBookGui(world, player);
 		}
+		
 		return false;
 	}
 }
