@@ -22,7 +22,7 @@ public class RefinedTableGui extends GuiContainer {
 
     @Override
     protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-		fontRenderer.drawString("Blueprint Crafting", 0, -12, 0x404040);
+		fontRenderer.drawString("Refining Table", 0, -12, 0x404040);
 		fontRenderer.drawString("Inventory", 8, ySize - 96 - 14, 0x404040);
 	}
 
