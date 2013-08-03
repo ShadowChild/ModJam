@@ -46,7 +46,6 @@ public class ModJam {
 		ClientProxy.render();
 		
 		NetworkRegistry.instance().registerGuiHandler(this.instance,new shadowhax.modjam.core.handler.GuiHandler());	
-		GameRegistry.addShapedRecipe(output, params)
 	}
 	
 	@Mod.EventHandler

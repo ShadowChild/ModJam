@@ -1,8 +1,3 @@
-/*
- * This is a class that will be used to help external
- * class files do things. As of now it will just be 
- * used for registering new recipes in the refining table
- */
 package shadowhax.modjam.core.util;
 
 import shadowhax.modjam.inventory.RefinedRecipeManager;
