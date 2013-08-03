@@ -2,7 +2,7 @@ package shadowhax.modjam.energy;
 
 import shadowhax.modjam.enums.EnumEnergyType;
 
-public class EnergyTranferHandler {
+public class EnergyTransferHandler {
 
     public static double getTranferRateFor(EnumEnergyType mainType, EnumEnergyType transferType) {
 

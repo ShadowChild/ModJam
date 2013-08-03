@@ -1,18 +1,17 @@
 package shadowhax.modjam.block;
 
-import net.minecraft.block.Block;
-import shadowhax.modjam.block.tile.TileEntityWire;
-import shadowhax.modjam.core.util.Config;
-import shadowhax.modjam.enums.EnumEnergyType;
-import shadowhax.modjam.tileentity.TileEntityWarpPad;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraft.block.Block;
+import shadowhax.modjam.block.tile.TileEntityEnergyStorage;
+import shadowhax.modjam.core.util.Config;
+import shadowhax.modjam.tileentity.TileEntityWarpPad;
 
 public class Blocks {
 	
 	public static Block warpBlock;
-	public static Block[] wires = new Block[256]; 
 	public static Block refiningTable;
+    public static Block energyStorageUnit;
 	
 	public static void init() {
 		
@@ -25,15 +24,15 @@ public class Blocks {
 	public static void addBlocks() {
 		
 		warpBlock = new BlockWarpCrystal(Config.warpBlockID).setUnlocalizedName("warpcrystal");
-		wires[0] = new BlockWire(Config.wiresID, EnumEnergyType.IGNIS).setUnlocalizedName("wire");
 		refiningTable = new BlockRefiningTable(Config.refiningTableID).setUnlocalizedName("refingingtable");
+        energyStorageUnit = new BlockEnergyStorageUnit(Config.energyStorageUnitID).setUnlocalizedName("energyStorageUnit");
 	}
 	
 	public static void registerBlocks() {
 		
 		GameRegistry.registerBlock(warpBlock, "warpBlock");
-		GameRegistry.registerBlock(wires[0], "wire");
 		GameRegistry.registerBlock(refiningTable, "refiningTable");
+        GameRegistry.registerBlock(energyStorageUnit, "energyStorageUnit");
 	}
 	
 	public static void addNames() {
@@ -43,6 +42,6 @@ public class Blocks {
 	
 	public static void registerTileEntities(){
 		GameRegistry.registerTileEntity(TileEntityWarpPad.class, "warpBlock");
-		GameRegistry.registerTileEntity(TileEntityWire.class, "wire");
+        GameRegistry.registerTileEntity(TileEntityEnergyStorage.class, "energyStorageUnit");
 	}
 }

@@ -10,6 +10,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import shadowhax.modjam.block.Blocks;
+import shadowhax.modjam.core.handler.GuiHandler;
 import shadowhax.modjam.core.proxy.ClientProxy;
 import shadowhax.modjam.core.proxy.CommonProxy;
 import shadowhax.modjam.core.util.Config;
@@ -35,12 +36,11 @@ public class ModJam {
 		Config.createConfig(evt);
 		getModMeta(evt.getModMetadata());
 		
-		new ShadowTest();
 		Blocks.init();
 		Items.init();
 		ClientProxy.render();
-		
-		NetworkRegistry.instance().registerGuiHandler(this.instance,new shadowhax.modjam.core.handler.GuiHandler());	
+
+        NetworkRegistry.instance().registerGuiHandler(this.instance, new GuiHandler());
 	}
 	
 	@Mod.EventHandler

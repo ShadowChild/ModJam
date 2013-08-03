@@ -8,7 +8,9 @@ public enum EnumEnergyType {
 	ZEPHYR("zephyr"),
 	ROS("ros"),
 	ORBITUS("orbitus"),
-    SPECTRA("spectra");
+    SPECTRA("spectra"),
+
+    NONE("none");
 
 	public String energyName;
 
