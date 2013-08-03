@@ -46,7 +46,7 @@ public class TileEntityBase extends TileEntity implements IEnergyStorageBlock {
 	}
 
 	@Override
-	public void modifyEnergy(int amount) {
+	public void modifyEnergy(double amount) {
 
 		this.currentEnergy += amount;
 

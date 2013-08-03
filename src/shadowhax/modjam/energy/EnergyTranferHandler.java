@@ -80,5 +80,7 @@ public class EnergyTranferHandler {
                 }
             }
         }
+
+        return 1;
     }
 }
