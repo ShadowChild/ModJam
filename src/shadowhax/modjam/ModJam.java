@@ -9,11 +9,13 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import shadowhax.modjam.block.Blocks;
 import shadowhax.modjam.core.handler.GuiHandler;
 import shadowhax.modjam.core.proxy.ClientProxy;
 import shadowhax.modjam.core.proxy.CommonProxy;
 import shadowhax.modjam.core.util.Config;
+import shadowhax.modjam.core.util.ModJamRegistry;
 import shadowhax.modjam.core.util.Reference;
 import shadowhax.modjam.item.Items;
 
@@ -41,6 +43,15 @@ public class ModJam {
 		ClientProxy.render();
 
         NetworkRegistry.instance().registerGuiHandler(this.instance, new GuiHandler());
+
+        ModJamRegistry.addShapedRecipe(new ItemStack(Items.refinedCrystal, 3, 1), new Object[] {
+            " xx  ",
+            " xx  ",
+            " xxx ",
+            "  xx ",
+            "  xx ",
+            'x', new ItemStack(Items.rawCrystal, 1, 1)
+        });
 	}
 	
 	@Mod.EventHandler
