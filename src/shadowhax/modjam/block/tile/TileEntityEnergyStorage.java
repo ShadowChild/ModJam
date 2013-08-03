@@ -25,14 +25,7 @@ public class TileEntityEnergyStorage extends TileEntity implements IEnergyStorag
 
         super.writeToNBT(nbt);
         nbt.setInteger("EnergyStored", energyStored);
-
-        if(energyStored == 0) {
-
-            nbt.setString("EnergyType", EnumEnergyType.NONE.energyName);
-        } else {
-
-            nbt.setString("EnergyType", energyType.energyName);
-        }
+        nbt.setString("EnergyType", energyType.energyName);
     }
 
     @Override

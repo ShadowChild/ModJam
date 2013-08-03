@@ -54,7 +54,7 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
 
                         if(item != null && item instanceof ItemRefinedCrystal) {
 
-                            if(!(theTile.getCurrentEnergyStored() + 200 > theTile.getMaxEnergyStored()) && !theTile.hasEnergyType()) {
+                            if(!(theTile.getCurrentEnergyStored() + 200 > theTile.getMaxEnergyStored())) {
 
                                 player.swingItem();
                                 if(!player.capabilities.isCreativeMode)
@@ -64,43 +64,73 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
 
                                     case 1: {
 
-                                        theTile.setEnergyType(EnumEnergyType.LUX);
-                                        theTile.modifyEnergy(200);
+                                        if(theTile.energyType == EnumEnergyType.LUX || theTile.energyType == EnumEnergyType.NONE) {
+
+                                            theTile.setEnergyType(EnumEnergyType.LUX);
+                                            theTile.modifyEnergy(200);
+                                            if(!player.capabilities.isCreativeMode)
+                                                --player.getCurrentEquippedItem().stackSize;
+                                        }
                                         break;
                                     }
 
                                     case 2: {
 
-                                        theTile.setEnergyType(EnumEnergyType.ROS);
-                                        theTile.modifyEnergy(200);
+                                        if(theTile.energyType == EnumEnergyType.ROS || theTile.energyType == EnumEnergyType.NONE) {
+
+                                            theTile.setEnergyType(EnumEnergyType.ROS);
+                                            theTile.modifyEnergy(200);
+                                            if(!player.capabilities.isCreativeMode)
+                                                --player.getCurrentEquippedItem().stackSize;
+                                        }
                                         break;
                                     }
 
                                     case 3: {
 
-                                        theTile.setEnergyType(EnumEnergyType.NATURA);
-                                        theTile.modifyEnergy(200);
+                                        if(theTile.energyType == EnumEnergyType.NATURA || theTile.energyType == EnumEnergyType.NONE) {
+
+                                            theTile.setEnergyType(EnumEnergyType.NATURA);
+                                            theTile.modifyEnergy(200);
+                                            if(!player.capabilities.isCreativeMode)
+                                                --player.getCurrentEquippedItem().stackSize;
+                                        }
                                         break;
                                     }
 
                                     case 4: {
 
-                                        theTile.setEnergyType(EnumEnergyType.OBITUS);
-                                        theTile.modifyEnergy(200);
+                                        if(theTile.energyType == EnumEnergyType.OBITUS || theTile.energyType == EnumEnergyType.NONE) {
+
+                                            theTile.setEnergyType(EnumEnergyType.OBITUS);
+                                            theTile.modifyEnergy(200);
+                                            if(!player.capabilities.isCreativeMode)
+                                                --player.getCurrentEquippedItem().stackSize;
+                                        }
                                         break;
                                     }
 
                                     case 5: {
 
-                                        theTile.setEnergyType(EnumEnergyType.IGNIS);
-                                        theTile.modifyEnergy(200);
+                                        if(theTile.energyType == EnumEnergyType.IGNIS || theTile.energyType == EnumEnergyType.NONE) {
+
+                                            theTile.setEnergyType(EnumEnergyType.IGNIS);
+                                            theTile.modifyEnergy(200);
+                                            if(!player.capabilities.isCreativeMode)
+                                                --player.getCurrentEquippedItem().stackSize;
+                                        }
                                         break;
                                     }
 
                                     case 6: {
 
-                                        theTile.setEnergyType(EnumEnergyType.ZEPHYR);
-                                        theTile.modifyEnergy(200);
+                                        if(theTile.energyType == EnumEnergyType.ZEPHYR || theTile.energyType == EnumEnergyType.NONE) {
+
+                                            theTile.setEnergyType(EnumEnergyType.ZEPHYR);
+                                            theTile.modifyEnergy(200);
+                                            if(!player.capabilities.isCreativeMode)
+                                                --player.getCurrentEquippedItem().stackSize;
+                                        }
                                         break;
                                     }
 
