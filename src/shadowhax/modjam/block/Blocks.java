@@ -10,6 +10,7 @@ public class Blocks {
 	
 	public static Block warpBlock;
 	public static Block[] wires = new Block[256]; 
+	public static Block refiningTable;
 	
 	public static void init() {
 		
@@ -23,6 +24,7 @@ public class Blocks {
 		
 		warpBlock = new BlockWarpCrystal(1337).setUnlocalizedName("warpcrystal");
 		wires[0] = new BlockWire(1338).setUnlocalizedName("wire");
+		refiningTable = new BlockRefiningTable(1339).setUnlocalizedName("refingingtable");
 	}
 	
 	public static void registerBlocks() {
