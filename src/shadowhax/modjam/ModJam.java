@@ -42,7 +42,7 @@ public class ModJam {
 		getModMeta(evt.getModMetadata());
 		
 		new ShadowTest();
-		Blocks.init();
+		//Blocks.init();
 		Items.init();
 		ClientProxy.render();
 		
