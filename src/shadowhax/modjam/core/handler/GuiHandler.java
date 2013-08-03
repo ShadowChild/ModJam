@@ -2,6 +2,7 @@ package shadowhax.modjam.core.handler;
 
 import shadowhax.modjam.block.Blocks;
 import shadowhax.modjam.client.gui.RefinedTableGui;
+import shadowhax.modjam.core.util.Config;
 import shadowhax.modjam.inventory.ContainerRefiningTable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -15,11 +16,10 @@ public class GuiHandler implements IGuiHandler {
 
 		TileEntity tile_entity = world.getBlockTileEntity(x, y, z);
 
-		switch (id) {
-
-		case 1:
-			return id == 1 && world.getBlockId(x, y, z) == Blocks.refiningTable.blockID ? new ContainerRefiningTable(player.inventory, world, x, y, z) : null;
+		if (world.getBlockId(x, y, z) == Config.refiningTableID){
+			return id == Config.guiRefiningID && world.getBlockId(x, y, z) == Blocks.refiningTable.blockID ? new ContainerRefiningTable(player.inventory, world, x, y, z) : null;
 		}
+		
 		return false;
 	}
 
@@ -28,11 +28,9 @@ public class GuiHandler implements IGuiHandler {
 
 		TileEntity tile_entity = world.getBlockTileEntity(x, y, z);
 
-		switch (id) {
-
-		case 1:
-			return id == 1 && world.getBlockId(x, y, z) == Blocks.refiningTable.blockID ? new RefinedTableGui(player.inventory, world, x, y, z) : null;
+		if (world.getBlockId(x, y, z) == Config.refiningTableID){
+			return id == Config.guiRefiningID && world.getBlockId(x, y, z) == Blocks.refiningTable.blockID ? new RefinedTableGui(player.inventory, world, x, y, z) : null;
 		}
-		return null;
+		return false;
 	}
 }
