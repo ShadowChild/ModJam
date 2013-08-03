@@ -20,6 +20,9 @@ public class Config{
 	public static int rawCrystalID;
 	public static int warpCrystalID;
 	
+	//Gui
+	public static int guiRefiningID;
+	
 
 	public static void createConfig(FMLPreInitializationEvent event){
 		Reference.logger.info(Reference.MOD_NAME + "Configuration Detected!");
@@ -33,6 +36,7 @@ public class Config{
 		rawCrystalID = config.get(itemValues, "Raw Crystal Item ID", 5337).getInt();
 		warpCrystalID = config.get(itemValues, "Warp Crystal Item ID", 5338).getInt();
 
+		guiRefiningID = config.get(guiValues, "Refining Table GUI ID", 1).getInt();
 		
 		config.save();
 		Reference.logger.info(Reference.MOD_NAME + "Config Loaded!");
