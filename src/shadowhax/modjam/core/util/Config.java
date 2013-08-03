@@ -17,6 +17,8 @@ public class Config{
 	public static int refiningTableID;
 	
 	//Items
+	public static int rawCrystalID;
+	public static int warpCrystalID;
 	
 
 	public static void createConfig(FMLPreInitializationEvent event){
@@ -27,6 +29,9 @@ public class Config{
 		warpBlockID = config.get(blockValues, "Warp Pad Block ID", 1337).getInt();
 		wiresID = config.get(blockValues, "Wire Block ID", 1338).getInt();
 		refiningTableID = config.get(blockValues, "Refining Table Block ID", 1339).getInt();
+		
+		rawCrystalID = config.get(itemValues, "Raw Crystal Item ID", 5337).getInt();
+		warpCrystalID = config.get(itemValues, "Warp Crystal Item ID", 5338).getInt();
 
 		
 		config.save();
