@@ -11,6 +11,7 @@ import shadowhax.modjam.ModJam;
 import shadowhax.modjam.block.tile.TileEntityEnergyStorage;
 import shadowhax.modjam.energy.IEnergyStorageBlock;
 import shadowhax.modjam.enums.EnumEnergyType;
+import shadowhax.modjam.item.ItemEnergyDestoyer;
 import shadowhax.modjam.item.ItemRefinedCrystal;
 
 public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider {
@@ -41,17 +42,17 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
 
                     player.addChatMessage("Storage Unit Now Holds " + theTile.getCurrentEnergyStored());
                     player.addChatMessage("Units Of " + theTile.energyType.energyName + " Energy");
-                    System.out.println(theTile.getCurrentEnergyStored());
-                    System.out.println(theTile.energyType.energyName);
+//                    System.out.println(theTile.getCurrentEnergyStored());
+//                    System.out.println(theTile.energyType.energyName);
                 } else {
 
-                    Item crystal = null;
+                    Item item = null;
 
                     if(player.getCurrentEquippedItem() != null) {
 
-                        crystal = player.getCurrentEquippedItem().getItem();
+                        item = player.getCurrentEquippedItem().getItem();
 
-                        if(crystal != null && crystal instanceof ItemRefinedCrystal) {
+                        if(item != null && item instanceof ItemRefinedCrystal) {
 
                             if(!(theTile.getCurrentEnergyStored() + 200 > theTile.getMaxEnergyStored()) && !theTile.hasEnergyType()) {
 
@@ -110,6 +111,11 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
                                 }
                             }
                             return true;
+                        } else if(item != null && item instanceof ItemEnergyDestoyer) {
+
+                            theTile.energyStored = 0;
+                            theTile.setEnergyType(EnumEnergyType.NONE);
+                            player.addChatMessage("You Have Reset The Energy");
                         }
                     }
                 }

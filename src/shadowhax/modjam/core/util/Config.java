@@ -21,6 +21,7 @@ public class Config {
     public static int warpCrystalID;
     public static int refinedCrystalID;
     public static int crystalBookID;
+    public static int energyDestroyerID;
 
     //Gui
     public static int guiRefiningID;
@@ -42,6 +43,7 @@ public class Config {
             warpCrystalID = config.get(itemValues, "Warp Crystal Item ID", 5338).getInt();
             refinedCrystalID = config.get(itemValues, "Refined Crystal Item ID", 5339).getInt();
             crystalBookID = config.get(itemValues, "Crystal Book Item ID", 5340).getInt();
+            energyDestroyerID = config.get(itemValues, "Energy Releaser Item ID", 5341).getInt();
 
             guiRefiningID = config.get(guiValues, "Refining Table GUI ID", 1).getInt();
         } catch (Exception e) {

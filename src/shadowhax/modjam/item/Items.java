@@ -1,8 +1,7 @@
 package shadowhax.modjam.item;
 
-import shadowhax.modjam.core.util.Config;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
+import shadowhax.modjam.core.util.Config;
 
 public class Items {
 	
@@ -15,6 +14,7 @@ public class Items {
 	public static Item warpCrystal;
 	public static Item refinedCrystal;
 	public static Item crystalBook;
+    public static Item energyRelease;
 	
 	public static void addItems() {
 		
@@ -22,5 +22,6 @@ public class Items {
 		warpCrystal = new ItemLinkingCrystal(Config.warpCrystalID).setUnlocalizedName("warping");
 		refinedCrystal = new ItemRefinedCrystal(Config.refinedCrystalID).setUnlocalizedName("refinedCrystal");
 		crystalBook = new ItemCrystalBook(Config.crystalBookID).setUnlocalizedName("crystalBook");
+        energyRelease = new ItemEnergyDestoyer(Config.energyDestroyerID).setUnlocalizedName("energyDestroyer");
 	}
 }
