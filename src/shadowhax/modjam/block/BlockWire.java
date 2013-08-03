@@ -9,13 +9,17 @@ import net.minecraft.world.World;
 import shadowhax.modjam.ModJam;
 import shadowhax.modjam.block.tile.TileEntityBase;
 import shadowhax.modjam.block.tile.TileEntityWire;
+import shadowhax.modjam.enums.EnumEnergyType;
 
 public class BlockWire extends Block implements ITileEntityProvider {
 
-	public BlockWire(int par1) {
+    protected EnumEnergyType type;
+
+	public BlockWire(int par1, EnumEnergyType type) {
 		
 		super(par1, Material.cloth);
 		this.setCreativeTab(ModJam.tab);
+        this.type = type;
 	}
 
 	@Override
@@ -47,4 +51,20 @@ public class BlockWire extends Block implements ITileEntityProvider {
 		
 		return false;
 	}
+
+    @Override
+    public void onBlockAdded(World world, int x, int y, int z) {
+
+        TileEntityWire wire = (TileEntityWire)world.getBlockTileEntity(x, y, z);
+
+        if(wire != null) {
+
+            wire.setEnergyType(this.type);
+        }
+    }
+
+    public EnumEnergyType getType() {
+
+        return this.type;
+    }
 }

@@ -1,17 +1,15 @@
 package shadowhax.modjam.block.tile;
 
-import java.util.Random;
-
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import shadowhax.modjam.energy.IEnergyStorageBlock;
+import shadowhax.modjam.enums.EnumEnergyType;
 
 public class TileEntityBase extends TileEntity implements IEnergyStorageBlock {
 
-	private int currentEnergy;
+	protected int currentEnergy;
+    protected EnumEnergyType type;
 	
 	public TileEntityBase() {
 		
@@ -52,7 +50,7 @@ public class TileEntityBase extends TileEntity implements IEnergyStorageBlock {
 
 		this.currentEnergy += amount;
 
-		System.out.println(currentEnergy);
+//		System.out.println(currentEnergy);
 	}
 
 	@Override
@@ -74,4 +72,16 @@ public class TileEntityBase extends TileEntity implements IEnergyStorageBlock {
 			}
 		}
 	}
+
+    @Override
+    public void setEnergyType(EnumEnergyType type) {
+
+        this.type = type;
+    }
+
+    @Override
+    public EnumEnergyType getType() {
+
+        return this.type;
+    }
 }
