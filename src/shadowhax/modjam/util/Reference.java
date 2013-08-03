@@ -7,5 +7,5 @@ public class Reference {
 	public static final String MOD_VERSION = "v1 indev";
 	
 	public static final String CLIENT_PROXY = "shadowhax.modjam.core.proxy.ClientProxy";
-	public static final String SERVER_PROXY = "shadowhax.midjam.core.proxy.CommonProxy";
+	public static final String SERVER_PROXY = "shadowhax.modjam.core.proxy.CommonProxy";
 }

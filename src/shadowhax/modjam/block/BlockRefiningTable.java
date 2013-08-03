@@ -20,7 +20,7 @@ public class BlockRefiningTable extends Block {
 		
 		if (!player.isSneaking()) {
 			
-			player.openGui(ModJam.instance, 7, var1, var2, var3, var4);
+			player.openGui(ModJam.instance, 1, var1, var2, var3, var4);
 			return true;
 		}
 		else {

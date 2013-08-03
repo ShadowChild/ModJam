@@ -10,11 +10,9 @@ import org.lwjgl.opengl.GL11;
 import shadowhax.modjam.block.model.ModelWarpPad;
 import shadowhax.modjam.tileentity.TileEntityWarpPad;
  
-public class RenderWarpPad extends TileEntitySpecialRenderer
-{
+public class RenderWarpPad extends TileEntitySpecialRenderer {
  
-    public RenderWarpPad()
-    {
+    public RenderWarpPad() {
         aModel = new ModelWarpPad();
     }
        
