@@ -12,7 +12,9 @@ public class Config{
 	public static String guiValues = "GUI Values";
 	
 	//Blocks
-	
+	public static int warpBlockID;
+	public static int wiresID;
+	public static int refiningTableID;
 	
 	//Items
 	
@@ -22,6 +24,9 @@ public class Config{
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
 		
+		warpBlockID = config.get(blockValues, "Warp Pad Block ID", 1337).getInt();
+		wiresID = config.get(blockValues, "Wire Block ID", 1338).getInt();
+		refiningTableID = config.get(blockValues, "Refining Table Block ID", 1339).getInt();
 
 		
 		config.save();
