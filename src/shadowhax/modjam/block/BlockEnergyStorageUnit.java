@@ -4,11 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import shadowhax.modjam.ModJam;
 import shadowhax.modjam.block.tile.TileEntityEnergyStorage;
 import shadowhax.modjam.energy.IEnergyStorageBlock;
+import shadowhax.modjam.item.ItemRefinedCrystal;
 
 public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider {
 
@@ -37,10 +39,27 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
                 if(player.isSneaking()) {
 
                     System.out.println(theTile.getCurrentEnergyStored());
-                    System.out.println(theTile.energyType.energyName);
+//                    System.out.println(theTile.energyType.energyName);
                 } else {
 
-                    theTile.modifyEnergy(200);
+                    Item crystal = null;
+
+                    if(player.getCurrentEquippedItem() != null) {
+
+                        crystal = player.getCurrentEquippedItem().getItem();
+
+                        if(crystal != null && crystal instanceof ItemRefinedCrystal) {
+
+                            if(!(theTile.getCurrentEnergyStored() + 200 > theTile.getMaxEnergyStored())) {
+
+                                player.swingItem();
+                                theTile.modifyEnergy(200);
+                                --player.getCurrentEquippedItem().stackSize;
+                            }
+                            return true;
+                        }
+                    }
+//                    theTile.modifyEnergy(200);
                 }
             }
         }

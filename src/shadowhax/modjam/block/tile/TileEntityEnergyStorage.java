@@ -54,4 +54,10 @@ public class TileEntityEnergyStorage extends TileEntity implements IEnergyStorag
 
         System.out.println(energyStored);
     }
+
+    @Override
+    public void setEnergyType(EnumEnergyType type) {
+
+        energyType = type;
+    }
 }
