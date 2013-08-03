@@ -29,14 +29,21 @@ public class BlockWire extends Block implements ITileEntityProvider {
 		
 		TileEntityBase tile = (TileEntityBase)world.getBlockTileEntity(x, y, z);
 		
-		if(!world.isRemote) {
+		if(!world.isRemote && !player.isSneaking()) {
 			
 			if(tile != null) {
 				
 				tile.modifyEnergy(200);
 				return true;
 			}
-		}
+		} else if(!world.isRemote && player.isSneaking()) {
+
+            if(tile != null) {
+
+                System.out.println(tile.getCurrentEnergyStored());
+                return true;
+            }
+        }
 		
 		return false;
 	}

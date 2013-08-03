@@ -1,6 +1,5 @@
 package shadowhax.modjam.energy;
 
-import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
 public interface IEnergyStorageBlock {
