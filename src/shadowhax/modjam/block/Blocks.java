@@ -31,6 +31,7 @@ public class Blocks {
 		
 		GameRegistry.registerBlock(warpBlock, "warpBlock");
 		GameRegistry.registerBlock(wires[0], "wire");
+		GameRegistry.registerBlock(refiningTable, "refiningTable");
 	}
 	
 	public static void addNames() {
