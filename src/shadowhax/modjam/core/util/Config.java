@@ -20,9 +20,11 @@ public class Config{
 	public static int rawCrystalID;
 	public static int warpCrystalID;
 	public static int refinedCrystalID;
+	public static int crystalBookID;
 	
 	//Gui
 	public static int guiRefiningID;
+	public static int guiCrystalBookID;
 	
 
 	public static void createConfig(FMLPreInitializationEvent event){
@@ -37,7 +39,8 @@ public class Config{
 		rawCrystalID = config.get(itemValues, "Raw Crystal Item ID", 5337).getInt();
 		warpCrystalID = config.get(itemValues, "Warp Crystal Item ID", 5338).getInt();
 		refinedCrystalID = config.get(itemValues, "Refined Crystal Item ID", 5339).getInt();
-
+		crystalBookID = config.get(itemValues, "Crystal Book Item ID", 5340).getInt();
+		
 		guiRefiningID = config.get(guiValues, "Refining Table GUI ID", 1).getInt();
 		
 		config.save();
