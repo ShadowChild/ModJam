@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 import shadowhax.modjam.ModJam;
 import shadowhax.modjam.block.tile.TileEntityEnergyStorage;
 import shadowhax.modjam.energy.IEnergyStorageBlock;
+import shadowhax.modjam.enums.EnumEnergyType;
 import shadowhax.modjam.item.ItemRefinedCrystal;
 
 public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider {
@@ -39,7 +40,7 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
                 if(player.isSneaking()) {
 
                     System.out.println(theTile.getCurrentEnergyStored());
-//                    System.out.println(theTile.energyType.energyName);
+                    System.out.println(theTile.energyType.energyName);
                 } else {
 
                     Item crystal = null;
@@ -65,5 +66,16 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
         }
 
         return false;
+    }
+
+    @Override
+    public void onBlockAdded(World world, int x, int y, int z) {
+
+        TileEntityEnergyStorage tile = (TileEntityEnergyStorage)world.getBlockTileEntity(x, y, z);
+
+        if(tile != null) {
+
+            tile.setEnergyType(EnumEnergyType.NONE);
+        }
     }
 }
