@@ -10,6 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import shadowhax.modjam.block.Blocks;
 import shadowhax.modjam.core.proxy.ClientProxy;
 import shadowhax.modjam.core.proxy.CommonProxy;
+import shadowhax.modjam.core.util.Config;
 import shadowhax.modjam.core.util.Reference;
 import shadowhax.modjam.item.Items;
 import shadowhax.modjam.recipe.RefinedRecipeManager;
@@ -37,7 +38,7 @@ public class ModJam {
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent evt) {
-		
+		Config.createConfig(evt);
 		getModMeta(evt.getModMetadata());
 		
 		new ShadowTest(); //test
