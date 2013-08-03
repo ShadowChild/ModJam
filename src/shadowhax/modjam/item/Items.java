@@ -13,10 +13,12 @@ public class Items {
 
 	public static Item rawCrystal;
 	public static Item warpCrystal;
+	public static Item refinedCrystal;
 	
 	public static void addItems() {
 		
 		rawCrystal = new ItemRawCrystal(Config.rawCrystalID).setUnlocalizedName("rawCrystal");
 		warpCrystal = new ItemLinkingCrystal(Config.warpCrystalID).setUnlocalizedName("warping");
+		refinedCrystal = new ItemRefinedCrystal(Config.refinedCrystalID).setUnlocalizedName("refinedCrystal");
 	}
 }

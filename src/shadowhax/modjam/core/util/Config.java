@@ -19,6 +19,7 @@ public class Config{
 	//Items
 	public static int rawCrystalID;
 	public static int warpCrystalID;
+	public static int refinedCrystalID;
 	
 	//Gui
 	public static int guiRefiningID;
@@ -35,6 +36,7 @@ public class Config{
 		
 		rawCrystalID = config.get(itemValues, "Raw Crystal Item ID", 5337).getInt();
 		warpCrystalID = config.get(itemValues, "Warp Crystal Item ID", 5338).getInt();
+		refinedCrystalID = config.get(itemValues, "Refined Crystal Item ID", 5339).getInt();
 
 		guiRefiningID = config.get(guiValues, "Refining Table GUI ID", 1).getInt();
 		
