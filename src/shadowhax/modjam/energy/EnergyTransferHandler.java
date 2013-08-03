@@ -37,7 +37,7 @@ public class EnergyTransferHandler {
                         return 0.30;
                     }
 
-                    case ORBITUS: {
+                    case OBITUS: {
 
                         return 0;
                     }
@@ -68,7 +68,7 @@ public class EnergyTransferHandler {
                         return 0.65;
                     }
 
-                    case ORBITUS: {
+                    case OBITUS: {
 
                         return 0.30;
                     }
@@ -104,7 +104,7 @@ public class EnergyTransferHandler {
                         return 0.65;
                     }
 
-                    case ORBITUS: {
+                    case OBITUS: {
 
                         return 0.65;
                     }
@@ -131,11 +131,11 @@ public class EnergyTransferHandler {
                 }
             }
 
-            case ORBITUS: {
+            case OBITUS: {
 
                 switch(transferType) {
 
-                    case ORBITUS: {
+                    case OBITUS: {
 
                         return 1;
                     }
@@ -186,7 +186,7 @@ public class EnergyTransferHandler {
                         return 0.65;
                     }
 
-                    case ORBITUS: {
+                    case OBITUS: {
 
                         return 0.65;
                     }
@@ -232,7 +232,7 @@ public class EnergyTransferHandler {
                         return 0.65;
                     }
 
-                    case ORBITUS: {
+                    case OBITUS: {
 
                         return 0.30;
                     }

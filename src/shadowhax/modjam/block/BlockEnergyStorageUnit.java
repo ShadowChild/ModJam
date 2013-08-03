@@ -39,6 +39,8 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
 
                 if(player.isSneaking()) {
 
+                    player.addChatMessage("Storage Unit Now Holds " + theTile.getCurrentEnergyStored());
+                    player.addChatMessage("Units Of " + theTile.energyType.energyName + " Energy");
                     System.out.println(theTile.getCurrentEnergyStored());
                     System.out.println(theTile.energyType.energyName);
                 } else {
@@ -51,16 +53,65 @@ public class BlockEnergyStorageUnit extends Block implements ITileEntityProvider
 
                         if(crystal != null && crystal instanceof ItemRefinedCrystal) {
 
-                            if(!(theTile.getCurrentEnergyStored() + 200 > theTile.getMaxEnergyStored())) {
+                            if(!(theTile.getCurrentEnergyStored() + 200 > theTile.getMaxEnergyStored()) && !theTile.hasEnergyType()) {
 
                                 player.swingItem();
-                                theTile.modifyEnergy(200);
-                                --player.getCurrentEquippedItem().stackSize;
+                                if(!player.capabilities.isCreativeMode)
+                                    --player.getCurrentEquippedItem().stackSize;
+
+                                switch(player.getCurrentEquippedItem().getItemDamage()) {
+
+                                    case 1: {
+
+                                        theTile.setEnergyType(EnumEnergyType.LUX);
+                                        theTile.modifyEnergy(200);
+                                        break;
+                                    }
+
+                                    case 2: {
+
+                                        theTile.setEnergyType(EnumEnergyType.ROS);
+                                        theTile.modifyEnergy(200);
+                                        break;
+                                    }
+
+                                    case 3: {
+
+                                        theTile.setEnergyType(EnumEnergyType.NATURA);
+                                        theTile.modifyEnergy(200);
+                                        break;
+                                    }
+
+                                    case 4: {
+
+                                        theTile.setEnergyType(EnumEnergyType.OBITUS);
+                                        theTile.modifyEnergy(200);
+                                        break;
+                                    }
+
+                                    case 5: {
+
+                                        theTile.setEnergyType(EnumEnergyType.IGNIS);
+                                        theTile.modifyEnergy(200);
+                                        break;
+                                    }
+
+                                    case 6: {
+
+                                        theTile.setEnergyType(EnumEnergyType.ZEPHYR);
+                                        theTile.modifyEnergy(200);
+                                        break;
+                                    }
+
+                                    default: {
+
+                                        break;
+                                    }
+                                }
                             }
                             return true;
                         }
                     }
-//                    theTile.modifyEnergy(200);
                 }
             }
         }

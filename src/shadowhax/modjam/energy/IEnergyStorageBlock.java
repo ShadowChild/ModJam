@@ -13,4 +13,6 @@ public interface IEnergyStorageBlock {
 	void modifyEnergy(double amount);
 
     void setEnergyType(EnumEnergyType type);
+
+    boolean hasEnergyType();
 }

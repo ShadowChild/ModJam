@@ -12,7 +12,7 @@ import shadowhax.modjam.ModJam;
 
 import java.util.List;
 
-public class ItemRefinedCrystal extends Item{
+public class ItemRefinedCrystal extends Item {
 
     // TODO: Use EnumEnergyType somewhere
 	public ItemRefinedCrystal(int id) {

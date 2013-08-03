@@ -60,4 +60,10 @@ public class TileEntityEnergyStorage extends TileEntity implements IEnergyStorag
 
         energyType = type;
     }
+
+    @Override
+    public boolean hasEnergyType() {
+
+        return energyType != EnumEnergyType.NONE;
+    }
 }

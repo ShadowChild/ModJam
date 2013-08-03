@@ -7,7 +7,7 @@ public enum EnumEnergyType {
 	NATURA("natura"),
 	ZEPHYR("zephyr"),
 	ROS("ros"),
-	ORBITUS("orbitus"),
+	OBITUS("obitus"),
     SPECTRA("spectra"),
 
     NONE("none");
