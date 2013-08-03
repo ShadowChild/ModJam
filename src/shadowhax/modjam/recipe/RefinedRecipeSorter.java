@@ -1,4 +1,4 @@
-package shadowhax.modjam.inventory;
+package shadowhax.modjam.recipe;
 
 import java.util.Comparator;
 

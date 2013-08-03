@@ -1,6 +1,6 @@
 package shadowhax.modjam.core.util;
 
-import shadowhax.modjam.inventory.RefinedRecipeManager;
+import shadowhax.modjam.recipe.RefinedRecipeManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;

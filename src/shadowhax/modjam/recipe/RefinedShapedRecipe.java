@@ -1,4 +1,4 @@
-package shadowhax.modjam.inventory;
+package shadowhax.modjam.recipe;
 
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
