@@ -1,19 +1,5 @@
 package shadowhax.modjam;
 
-import java.util.Arrays;
-
-import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
-import shadowhax.modjam.block.Blocks;
-import shadowhax.modjam.core.proxy.ClientProxy;
-import shadowhax.modjam.core.proxy.CommonProxy;
-import shadowhax.modjam.core.util.Config;
-import shadowhax.modjam.core.util.Reference;
-import shadowhax.modjam.item.Items;
-import shadowhax.modjam.recipe.RefinedRecipeManager;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.SidedProxy;
@@ -22,7 +8,15 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import shadowhax.modjam.block.Blocks;
+import shadowhax.modjam.core.proxy.ClientProxy;
+import shadowhax.modjam.core.proxy.CommonProxy;
+import shadowhax.modjam.core.util.Config;
+import shadowhax.modjam.core.util.Reference;
+import shadowhax.modjam.item.Items;
+
+import java.util.Arrays;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -42,7 +36,7 @@ public class ModJam {
 		getModMeta(evt.getModMetadata());
 		
 		new ShadowTest();
-		//Blocks.init();
+		Blocks.init();
 		Items.init();
 		ClientProxy.render();
 		

@@ -41,6 +41,11 @@ public class EnergyTranferHandler {
 
                         return 0;
                     }
+
+                    case SPECTRA: {
+
+                        return 1;
+                    }
                 }
             }
 
@@ -77,10 +82,184 @@ public class EnergyTranferHandler {
 
                         return 0;
                     }
+
+                    case SPECTRA: {
+
+                        return 1;
+                    }
                 }
             }
-        }
 
-        return 1;
+            case NATURA: {
+
+                switch(transferType) {
+
+                    case NATURA: {
+
+                        return 1;
+                    }
+
+                    case ROS: {
+
+                        return 0.65;
+                    }
+
+                    case ORBITUS: {
+
+                        return 0.65;
+                    }
+
+                    case LUX: {
+
+                        return 0.30;
+                    }
+
+                    case IGNIS: {
+
+                        return 0.30;
+                    }
+
+                    case ZEPHYR: {
+
+                        return 0;
+                    }
+
+                    case SPECTRA: {
+
+                        return 1;
+                    }
+                }
+            }
+
+            case ORBITUS: {
+
+                switch(transferType) {
+
+                    case ORBITUS: {
+
+                        return 1;
+                    }
+
+                    case IGNIS: {
+
+                        return 0.65;
+                    }
+
+                    case NATURA: {
+
+                        return 0.65;
+                    }
+
+                    case ZEPHYR: {
+
+                        return 0.30;
+                    }
+
+                    case ROS: {
+
+                        return 0.30;
+                    }
+
+                    case LUX: {
+
+                        return 0;
+                    }
+
+                    case SPECTRA: {
+
+                        return 1;
+                    }
+                }
+            }
+
+            case IGNIS: {
+
+                switch(transferType) {
+
+                    case IGNIS: {
+
+                        return 1;
+                    }
+
+                    case ZEPHYR: {
+
+                        return 0.65;
+                    }
+
+                    case ORBITUS: {
+
+                        return 0.65;
+                    }
+
+                    case LUX: {
+
+                        return 0.30;
+                    }
+
+                    case NATURA: {
+
+                        return 0.30;
+                    }
+
+                    case ROS: {
+
+                        return 0;
+                    }
+
+                    case SPECTRA: {
+
+                        return 1;
+                    }
+                }
+            }
+
+            case ZEPHYR: {
+
+                switch(transferType) {
+
+                    case ZEPHYR: {
+
+                        return 1;
+                    }
+
+                    case LUX: {
+
+                        return 0.65;
+                    }
+
+                    case IGNIS: {
+
+                        return 0.65;
+                    }
+
+                    case ORBITUS: {
+
+                        return 0.30;
+                    }
+
+                    case ROS: {
+
+                        return 0.30;
+                    }
+
+                    case NATURA: {
+
+                        return 0;
+                    }
+
+                    case SPECTRA: {
+
+                        return 1;
+                    }
+                }
+            }
+
+            case SPECTRA: {
+
+                return 1;
+            }
+
+            default: return 0;
+        }
     }
 }

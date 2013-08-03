@@ -50,7 +50,7 @@ public class TileEntityBase extends TileEntity implements IEnergyStorageBlock {
 
 		this.currentEnergy += amount;
 
-//		System.out.println(currentEnergy);
+		System.out.println(currentEnergy);
 	}
 
 	@Override

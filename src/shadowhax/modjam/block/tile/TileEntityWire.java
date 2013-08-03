@@ -2,9 +2,9 @@ package shadowhax.modjam.block.tile;
 
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 import shadowhax.modjam.block.BlockWire;
+import shadowhax.modjam.energy.EnergyTranferHandler;
 import shadowhax.modjam.energy.IEnergyStorageBlock;
 import shadowhax.modjam.enums.EnumEnergyType;
 
@@ -13,27 +13,29 @@ public class TileEntityWire extends TileEntityBase {
     @Override
     public void transferEnergy(ForgeDirection direction) {
 
-        TileEntity neighborBlock;
-        IEnergyStorageBlock transferBlock;
+        TileEntityBase neighborBlock;
+        BlockWire transferBlock;
         BlockWire wire;
-        int transferRate;
+        double transferRate;
 
-        neighborBlock = worldObj.getBlockTileEntity(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ);
+        neighborBlock = (TileEntityBase)worldObj.getBlockTileEntity(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ);
 
         wire = (BlockWire)Block.blocksList[worldObj.getBlockId(xCoord, yCoord, zCoord)];
 
         if(neighborBlock != null && neighborBlock instanceof IEnergyStorageBlock) {
 
-            transferBlock = (IEnergyStorageBlock)neighborBlock;
+            transferBlock = (BlockWire)Block.blocksList[worldObj.getBlockId(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ)];
 
             while(this.currentEnergy > 0) {
 
                 if(wire != null) {
 
-//                    transferRate = wire.getType().tranferRate;
-//
-//                    this.modifyEnergy(-20 * transferRate);
-//                    transferBlock.modifyEnergy(20 * transferRate);
+                    transferRate = EnergyTranferHandler.getTranferRateFor(wire.getType(), transferBlock.getType());
+
+                    System.out.println(transferRate);
+
+                    this.modifyEnergy(-20 * transferRate);
+                    neighborBlock.modifyEnergy(20 * transferRate);
                 }
             }
         }
