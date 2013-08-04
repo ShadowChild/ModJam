@@ -1,4 +1,4 @@
-package shadowhax.crystalluscraft.tileentity;
+package shadowhax.crystalluscraft.block.tile;
 
 import net.minecraft.tileentity.TileEntity;
 

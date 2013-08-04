@@ -3,7 +3,7 @@ package shadowhax.crystalluscraft.core.proxy;
 import org.lwjgl.input.Keyboard;
 
 import shadowhax.crystalluscraft.block.renderer.RenderWarpPad;
-import shadowhax.crystalluscraft.tileentity.TileEntityWarpPad;
+import shadowhax.crystalluscraft.block.tile.TileEntityWarpPad;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

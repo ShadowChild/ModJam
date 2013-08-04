@@ -16,9 +16,6 @@ public class RefinedTableGui extends GuiContainer {
 		super(new ContainerRefiningTable(inventoryplayer, world, i, j, k));
 	}
 
-	public void onGuiClosed() {
-		super.onGuiClosed();
-	}
 
     @Override
     protected void drawGuiContainerForegroundLayer(int par1, int par2) {

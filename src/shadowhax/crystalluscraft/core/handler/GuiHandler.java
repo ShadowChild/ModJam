@@ -21,11 +21,6 @@ public class GuiHandler implements IGuiHandler {
 			return id == Config.guiRefiningID && world.getBlockId(x, y, z) == Blocks.refiningTable.blockID ? new ContainerRefiningTable(player.inventory, world, x, y, z) : null;
 		}
 		
-		if (id == Config.guiCrystalBookID){
-			
-			return new CrystalBookGui(world, player);
-		}
-		
 		return false;
 	}
 
@@ -36,11 +31,6 @@ public class GuiHandler implements IGuiHandler {
 
 		if (world.getBlockId(x, y, z) == Config.refiningTableID){
 			return id == Config.guiRefiningID && world.getBlockId(x, y, z) == Blocks.refiningTable.blockID ? new RefinedTableGui(player.inventory, world, x, y, z) : null;
-		}
-		
-		if (id == Config.crystalBookID){
-			
-			return new CrystalBookGui(world, player);
 		}
 		
 		return false;

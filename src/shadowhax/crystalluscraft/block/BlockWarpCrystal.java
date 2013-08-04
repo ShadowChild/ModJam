@@ -3,7 +3,7 @@ package shadowhax.crystalluscraft.block;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import shadowhax.crystalluscraft.CrystallusCraft;
-import shadowhax.crystalluscraft.tileentity.TileEntityWarpPad;
+import shadowhax.crystalluscraft.block.tile.TileEntityWarpPad;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;

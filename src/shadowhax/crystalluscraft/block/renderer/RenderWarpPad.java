@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import shadowhax.crystalluscraft.block.model.ModelWarpPad;
-import shadowhax.crystalluscraft.tileentity.TileEntityWarpPad;
+import shadowhax.crystalluscraft.block.tile.TileEntityWarpPad;
  
 public class RenderWarpPad extends TileEntitySpecialRenderer {
  
