@@ -23,6 +23,7 @@ public class Config {
     public static int crystalBookID;
     public static int energyDestroyerID;
 	public static int chestLinkID;
+    public static int energyCellID;
 
     //Gui
     public static int guiRefiningID;
@@ -35,6 +36,8 @@ public class Config {
         try {
             config.load();
 
+            config.addCustomCategoryComment(guiValues, "Do Not Set 2 Different Gui ID's To The Same Number, This Will Break");
+
             warpBlockID = config.get(blockValues, "Warp Pad Block ID", 1337).getInt();
             energyStorageUnitID = config.get(blockValues, "Energy Storage Block ID", 1338).getInt();
             refiningTableID = config.get(blockValues, "Refining Table Block ID", 1339).getInt();
@@ -45,6 +48,7 @@ public class Config {
             crystalBookID = config.get(itemValues, "Crystal Book Item ID", 5340).getInt();
             energyDestroyerID = config.get(itemValues, "Energy Releaser Item ID", 5341).getInt();
             chestLinkID = config.get(itemValues, "Chest Link Item ID", 5341).getInt();
+            energyCellID = config.get(itemValues, "Energy Cell Item ID", 5342).getInt();
 
             guiRefiningID = config.get(guiValues, "Refining Table GUI ID", 1).getInt();
             guiCrystalBookID = config.get(guiValues, "Crystal Book GUI ID", 2).getInt();
