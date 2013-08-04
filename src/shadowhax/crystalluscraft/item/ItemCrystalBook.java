@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import shadowhax.crystalluscraft.CrystallusCraft;
 import shadowhax.crystalluscraft.client.gui.CrystalBookGui;
+import shadowhax.crystalluscraft.core.proxy.ClientProxy;
 import shadowhax.crystalluscraft.core.util.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,7 +22,7 @@ public class ItemCrystalBook extends Item {
     
     @SideOnly(Side.CLIENT)
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
-    	Minecraft.getMinecraft().displayGuiScreen(new CrystalBookGui(world, player));
-	return itemstack;
+    	ClientProxy.openGui(world, player);
+    	return itemstack;
     }
 }

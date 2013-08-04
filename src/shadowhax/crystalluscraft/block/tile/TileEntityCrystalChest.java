@@ -16,39 +16,25 @@ import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.StatCollector;
 
-/**
- * @author AbrarSyed
- */
 public class TileEntityCrystalChest extends TileEntityChest implements IInventory
 {
 	private ItemStack[]	chestContents	= new ItemStack[36];
 
-	/** The number of players currently using this chest */
 	public int numUsingPlayers;
 	private int	ticksSinceSync;
 
-	/**
-	 * Returns the number of slots in the inventory.
-	 */
 	@Override
 	public int getSizeInventory()
 	{
 		return 27;
 	}
 
-	/**
-	 * Returns the stack in slot i
-	 */
 	@Override
 	public ItemStack getStackInSlot(int par1)
 	{
 		return chestContents[par1];
 	}
 
-	/**
-	 * Removes from an inventory slot (first arg) up to a specified number (second arg) of items and returns them in a
-	 * new stack.
-	 */
 	@Override
 	public ItemStack decrStackSize(int par1, int par2)
 	{
@@ -80,10 +66,6 @@ public class TileEntityCrystalChest extends TileEntityChest implements IInventor
 			return null;
 	}
 
-	/**
-	 * When some containers are closed they call this on each slot, then drop whatever it returns as an EntityItem -
-	 * like when you close a workbench GUI.
-	 */
 	@Override
 	public ItemStack getStackInSlotOnClosing(int par1)
 	{
@@ -97,9 +79,6 @@ public class TileEntityCrystalChest extends TileEntityChest implements IInventor
 			return null;
 	}
 
-	/**
-	 * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
-	 */
 	@Override
 	public void setInventorySlotContents(int par1, ItemStack par2ItemStack)
 	{
@@ -113,18 +92,12 @@ public class TileEntityCrystalChest extends TileEntityChest implements IInventor
 		onInventoryChanged();
 	}
 
-	/**
-	 * Returns the name of the inventory.
-	 */
 	@Override
 	public String getInvName()
 	{
 		return StatCollector.translateToLocal("Crystal Chest");
 	}
 
-	/**
-	 * Reads a tile entity from NBT.
-	 */
 	@Override
 	public void readFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
@@ -144,9 +117,6 @@ public class TileEntityCrystalChest extends TileEntityChest implements IInventor
 		}
 	}
 
-	/**
-	 * Writes a tile entity to NBT.
-	 */
 	@Override
 	public void writeToNBT(NBTTagCompound par1NBTTagCompound)
 	{
@@ -167,19 +137,12 @@ public class TileEntityCrystalChest extends TileEntityChest implements IInventor
 		par1NBTTagCompound.setTag("Items", var2);
 	}
 
-	/**
-	 * Returns the maximum stack size for a inventory slot. Seems to always be 64, possibly will be extended. *Isn't
-	 * this more of a set than a get?*
-	 */
 	@Override
 	public int getInventoryStackLimit()
 	{
 		return 64;
 	}
 
-	/**
-	 * Do not make give this method the name canInteractWith because it clashes with Container
-	 */
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer par1EntityPlayer)
 	{
@@ -192,10 +155,6 @@ public class TileEntityCrystalChest extends TileEntityChest implements IInventor
 		return true;
 	}
 
-	/**
-	 * Allows the entity to update its state. Overridden in most subclasses, e.g. the mob spawner uses this to count
-	 * ticks and creates a new spawn inside its implementation.
-	 */
 	@Override
 	public void updateEntity()
 	{
@@ -227,10 +186,6 @@ public class TileEntityCrystalChest extends TileEntityChest implements IInventor
 		}
 	}
 
-	/**
-	 * Called when a client event is received with the event number and argument, see World.sendClientEvent
-	 * @return
-	 */
 	@Override
 	public boolean receiveClientEvent(int par1, int par2)
 	{

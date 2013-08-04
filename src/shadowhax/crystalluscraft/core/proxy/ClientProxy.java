@@ -1,9 +1,14 @@
 package shadowhax.crystalluscraft.core.proxy;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+
 import org.lwjgl.input.Keyboard;
 
 import shadowhax.crystalluscraft.block.renderer.RenderWarpPad;
 import shadowhax.crystalluscraft.block.tile.TileEntityWarpPad;
+import shadowhax.crystalluscraft.client.gui.CrystalBookGui;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -18,5 +23,10 @@ public class ClientProxy extends CommonProxy {
 	public static boolean isShiftKeyDown() {
 
 		return Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public static void openGui(World world, EntityPlayer player){
+    	Minecraft.getMinecraft().displayGuiScreen(new CrystalBookGui(world, player));
 	}
 }
