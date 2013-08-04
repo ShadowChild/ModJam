@@ -3,6 +3,7 @@ package shadowhax.crystalluscraft.item;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import shadowhax.crystalluscraft.CrystallusCraft;
 import shadowhax.crystalluscraft.energy.IEnergyCell;
 
 public class ItemEnergyCell extends Item implements IEnergyCell {
@@ -10,6 +11,7 @@ public class ItemEnergyCell extends Item implements IEnergyCell {
     public ItemEnergyCell(int id) {
 
         super(id);
+        this.setCreativeTab(CrystallusCraft.tab);
     }
 
     @Override
