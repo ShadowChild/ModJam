@@ -15,6 +15,7 @@ public class Items {
 	public static Item refinedCrystal;
 	public static Item crystalBook;
     public static Item energyRelease;
+    public static Item chestLink;
 	
 	public static void addItems() {
 		
@@ -23,5 +24,6 @@ public class Items {
 		refinedCrystal = new ItemRefinedCrystal(Config.refinedCrystalID).setUnlocalizedName("refinedCrystal");
 		crystalBook = new ItemCrystalBook(Config.crystalBookID).setUnlocalizedName("crystalBook");
         energyRelease = new ItemEnergyDestoyer(Config.energyDestroyerID).setUnlocalizedName("energyDestroyer");
+        chestLink = new ItemChestLink(Config.chestLinkID).setUnlocalizedName("chestLink");
 	}
 }
