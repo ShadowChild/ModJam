@@ -6,7 +6,9 @@ import net.minecraft.world.World;
 
 import org.lwjgl.input.Keyboard;
 
+import shadowhax.crystalluscraft.block.renderer.RenderCrystalChest;
 import shadowhax.crystalluscraft.block.renderer.RenderWarpPad;
+import shadowhax.crystalluscraft.block.tile.TileEntityCrystalChest;
 import shadowhax.crystalluscraft.block.tile.TileEntityWarpPad;
 import shadowhax.crystalluscraft.client.gui.CrystalBookGui;
 import cpw.mods.fml.client.registry.ClientRegistry;
@@ -18,6 +20,7 @@ public class ClientProxy extends CommonProxy {
 	@SideOnly(Side.CLIENT)
 	public static void render() {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWarpPad.class, new RenderWarpPad());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCrystalChest.class, new RenderCrystalChest());
 	}
 
 	public static boolean isShiftKeyDown() {

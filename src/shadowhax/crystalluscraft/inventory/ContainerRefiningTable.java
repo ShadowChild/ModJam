@@ -60,23 +60,24 @@ public class ContainerRefiningTable extends Container {
 	         
 		craftResult.setInventorySlotContents(0, RefinedRecipeManager.getInstance().findMatchingRecipe(craftMatrix, worldObj));
 	}
+	
+    public void onContainerClosed(EntityPlayer par1EntityPlayer)
+    {
+        super.onContainerClosed(par1EntityPlayer);
 
-	public void onCraftGuiClosed(EntityPlayer entityplayer) {
-	        
-		super.onContainerClosed(entityplayer);
-	         
-		if (worldObj.isRemote) {               
-			return;      
-		}
-		
-		for(int i = 0; i < 25; i++) {
-	                 
-			ItemStack itemstack = craftMatrix.getStackInSlot(i);                 
-			if (itemstack != null) {              
-				entityplayer.dropPlayerItem(itemstack);                 
-			}         
-		}
-	}
+        if (!this.worldObj.isRemote)
+        {
+            for (int i = 0; i < 25; ++i)
+            {
+                ItemStack itemstack = this.craftMatrix.getStackInSlotOnClosing(i);
+
+                if (itemstack != null)
+                {
+                    par1EntityPlayer.dropPlayerItem(itemstack);
+                }
+            }
+        }
+    }
 
 	public boolean canInteractWith(EntityPlayer entityplayer) {
 	         

@@ -28,7 +28,7 @@ public class Blocks {
 		warpBlock = new BlockWarpCrystal(Config.warpBlockID).setUnlocalizedName("warpcrystal");
 		refiningTable = new BlockRefiningTable(Config.refiningTableID).setUnlocalizedName("refingingtable");
         energyStorageUnit = new BlockEnergyStorageUnit(Config.energyStorageUnitID).setUnlocalizedName("energyStorageUnit");
-        crystalChest = new BlockCrystalChest(3000).setUnlocalizedName("no");
+        crystalChest = new BlockCrystalChest(3000, 0).setUnlocalizedName("no");
 	}
 	
 	public static void registerBlocks() {
