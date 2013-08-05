@@ -6,9 +6,12 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockCrystalOre extends ItemBlockWithMetadata {
 
+    private Block theBlock;
+
     public ItemBlockCrystalOre(int par1, Block par2Block) {
 
         super(par1, par2Block);
+        this.theBlock = par2Block;
     }
 
     @Override
@@ -55,6 +58,6 @@ public class ItemBlockCrystalOre extends ItemBlockWithMetadata {
             }
         }
 
-        return "tile.crystalOre." + s;
+        return "tile." + this.theBlock.getUnlocalizedName() + "." + s;
     }
 }

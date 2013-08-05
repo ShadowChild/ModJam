@@ -21,7 +21,7 @@ public class ClientProxy extends CommonProxy {
 	public static void render() {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWarpPad.class, new RenderWarpPad());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCrystalChest.class, new RenderCrystalChest());
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCrystalOre.class, new RenderCrystalOre());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCrystalOre.class, new RenderCrystalOre());
 	}
 
 	public static boolean isShiftKeyDown() {

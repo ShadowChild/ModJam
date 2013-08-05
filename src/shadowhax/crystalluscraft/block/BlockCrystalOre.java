@@ -11,16 +11,18 @@ import shadowhax.crystalluscraft.CrystallusCraft;
 import shadowhax.crystalluscraft.block.tile.TileEntityCrystalOre;
 
 import java.util.List;
-import java.util.Random;
 
 public class BlockCrystalOre extends BlockContainer {
 
-    public BlockCrystalOre(int id) {
+    public int growthStage;
+
+    public BlockCrystalOre(int id, int growthStage) {
 
         super(id, Material.rock);
         this.setLightOpacity(0);
         this.setTickRandomly(true);
         this.setCreativeTab(CrystallusCraft.tab);
+        this.growthStage = growthStage;
     }
 
     @Override
@@ -40,11 +42,13 @@ public class BlockCrystalOre extends BlockContainer {
 
     @Override
     public boolean isOpaqueCube() {
+
         return false;
     }
 
     @Override
     public boolean renderAsNormalBlock() {
+
         return false;
     }
 
@@ -52,52 +56,5 @@ public class BlockCrystalOre extends BlockContainer {
     public int getRenderType() {
 
         return -1;
-    }
-
-//    @Override
-//    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
-//
-//        TileEntityCrystalOre tile = (TileEntityCrystalOre)world.getBlockTileEntity(x, y, z);
-//
-//        if(tile != null) {
-//
-//            if(tile.growthStage != 1) {
-//
-//                tile.growthStage = 1;
-//            }
-//        }
-//
-//        return false;
-//    }
-
-
-    @Override
-    public void randomDisplayTick(World world, int x, int y, int z, Random random) {
-
-        System.out.println("tick");
-
-        TileEntityCrystalOre tile = (TileEntityCrystalOre)world.getBlockTileEntity(x, y, z);
-
-        int grow = random.nextInt(400);
-
-        System.out.println(grow);
-
-        if(grow == 200) {
-
-            if(tile != null) {
-
-                System.out.println("tile is not null");
-                tile.growthStage++;
-                System.out.println(tile.growthStage);
-                tile.validate();
-                world.setBlockTileEntity(x, y, z, tile);
-            }
-        }
-    }
-
-    @Override
-    public void updateTick(World world, int x, int y, int z, Random par5Random) {
-
-
     }
 }

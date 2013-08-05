@@ -32,6 +32,8 @@ public class CrystallusCraft {
 	public static CrystallusCraft instance;
 	
 	public static CreativeTabs tab = new CreativeTabCustom();
+
+    public static int crystalRenderID;
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent evt) {
@@ -56,7 +58,7 @@ public class CrystallusCraft {
 	
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent evt) {
-			
+
 	}
 	
 	@Mod.EventHandler

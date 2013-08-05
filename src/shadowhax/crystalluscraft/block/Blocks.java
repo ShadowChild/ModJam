@@ -17,9 +17,13 @@ public class Blocks {
 	public static Block refiningTable;
     public static Block energyStorageUnit;
 	public static Block crystalChest;
-    public static BlockCrystalOre crystalOre; // Needed for rendering
     public static Block compactRawCrystal;
-	
+
+    public static Block crystalStage1;
+    public static Block crystalStage2;
+    public static Block crystalStage3;
+    public static Block crystalStage4;
+
 	public static void init() {
 		
 		addBlocks();
@@ -34,10 +38,14 @@ public class Blocks {
 		refiningTable = new BlockRefiningTable(Config.refiningTableID).setUnlocalizedName("refingingtable");
         energyStorageUnit = new BlockEnergyStorageUnit(Config.energyStorageUnitID).setUnlocalizedName("energyStorageUnit");
         crystalChest = new BlockCrystalChest(3000, 0).setUnlocalizedName("no");
-        crystalOre = (BlockCrystalOre)new BlockCrystalOre(Config.crystalOreID).setUnlocalizedName("crystalOre");
         compactRawCrystal = new BlockCompactCrystalRaw(2005, Material.glass).setUnlocalizedName("rawCrystalBlock");
+
+        crystalStage1 = new BlockCrystalOre(2006, 0).setUnlocalizedName("crystalStage1");
+        crystalStage2 = new BlockCrystalOre(2007, 1).setUnlocalizedName("crystalStage2");
+        crystalStage3 = new BlockCrystalOre(2008, 2).setUnlocalizedName("crystalStage3");
+        crystalStage4 = new BlockCrystalOre(2009, 3).setUnlocalizedName("crystalStage4");
 	}
-	
+
 	public static void registerBlocks() {
 		
 		GameRegistry.registerBlock(warpBlock, "warpBlock");
@@ -46,7 +54,10 @@ public class Blocks {
         GameRegistry.registerBlock(crystalChest, "crystalChest");
         GameRegistry.registerBlock(compactRawCrystal, "compactRawCrystal");
 
-        GameRegistry.registerBlock(crystalOre, ItemBlockCrystalOre.class, "crystalOre");
+        GameRegistry.registerBlock(crystalStage1, ItemBlockCrystalOre.class, "crystalStage1");
+        GameRegistry.registerBlock(crystalStage2, ItemBlockCrystalOre.class, "crystalStage2");
+        GameRegistry.registerBlock(crystalStage3, ItemBlockCrystalOre.class, "crystalStage3");
+        GameRegistry.registerBlock(crystalStage4, ItemBlockCrystalOre.class, "crystalStage4");
 	}
 	
 	public static void addNames() {
@@ -54,7 +65,8 @@ public class Blocks {
 		LanguageRegistry.addName(warpBlock, "Warp Block");
 	}
 	
-	public static void registerTileEntities(){
+	public static void registerTileEntities() {
+
 		GameRegistry.registerTileEntity(TileEntityWarpPad.class, "warpBlock");
         GameRegistry.registerTileEntity(TileEntityEnergyStorage.class, "energyStorageUnit");
         GameRegistry.registerTileEntity(TileEntityCrystalChest.class, "crystalChest");
