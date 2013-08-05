@@ -3,7 +3,6 @@ package shadowhax.crystalluscraft.block.item;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
-import shadowhax.crystalluscraft.block.BlockCrystalOre;
 
 public class ItemBlockCrystalOre extends ItemBlockWithMetadata {
 
@@ -57,11 +56,6 @@ public class ItemBlockCrystalOre extends ItemBlockWithMetadata {
                 s = "zephyr";
                 break;
             }
-        }
-
-        if(theBlock instanceof BlockCrystalOre) {
-
-            ((BlockCrystalOre)theBlock).name = s;
         }
 
         return "tile." + this.theBlock.getUnlocalizedName() + "." + s;
