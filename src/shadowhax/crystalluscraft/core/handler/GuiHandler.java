@@ -23,7 +23,7 @@ public class GuiHandler implements IGuiHandler {
 		switch(id){
 		
 		case 1: return world.getBlockId(x, y, z) == Blocks.refiningTable.blockID ? new ContainerRefiningTable(player.inventory, world, x, y, z): null;
-		case 2: return world.getBlockId(x, y, z) == Blocks.crystalChest.blockID ? new ContainerCrystalChest(player.inventory, (TileEntityCrystalChest) tile_entity): null;
+		case 3: return world.getBlockId(x, y, z) == Blocks.crystalChest.blockID ? new ContainerCrystalChest(player.inventory, (TileEntityCrystalChest) tile_entity): null;
 		default: return null;
 		}
 	}
