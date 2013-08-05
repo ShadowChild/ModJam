@@ -70,20 +70,34 @@ public class BlockCrystalOre extends BlockContainer {
 //        return false;
 //    }
 
+
     @Override
-    public void updateTick(World world, int x, int y, int z, Random par5Random) {
+    public void randomDisplayTick(World world, int x, int y, int z, Random random) {
 
         System.out.println("tick");
 
         TileEntityCrystalOre tile = (TileEntityCrystalOre)world.getBlockTileEntity(x, y, z);
 
-        if(tile != null) {
+        int grow = random.nextInt(400);
 
-            System.out.println("tile is not null");
-            tile.growthStage++;
-            System.out.println(tile.growthStage);
-            tile.validate();
-            world.setBlockTileEntity(x, y, z, tile);
+        System.out.println(grow);
+
+        if(grow == 200) {
+
+            if(tile != null) {
+
+                System.out.println("tile is not null");
+                tile.growthStage++;
+                System.out.println(tile.growthStage);
+                tile.validate();
+                world.setBlockTileEntity(x, y, z, tile);
+            }
         }
+    }
+
+    @Override
+    public void updateTick(World world, int x, int y, int z, Random par5Random) {
+
+
     }
 }
