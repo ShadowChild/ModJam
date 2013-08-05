@@ -41,8 +41,8 @@ public class Blocks {
 		refiningTable = new BlockRefiningTable(Config.refiningTableID).setHardness(2.5F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("workbench").setUnlocalizedName("refingingtable");
         energyStorageUnit = new BlockEnergyStorageUnit(Config.energyStorageUnitID).setHardness(0.5F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("energyStorageUnit");
         crystalChest = new BlockCrystalChest(3000, 0).setHardness(22.5F).setResistance(1000.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("crystalChest");
-        compactRawCrystal = new BlockCompactCrystalRaw(3005, Material.glass).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("rawCrystalBlock");
-        compactRefinedCrystal = new BlockCompactCrystalRefined(3008, Material.glass).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("refinecCrystalBlock");
+      //  compactRawCrystal = new BlockCompactCrystalRaw(3005, Material.glass).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("rawCrystalBlock");
+       // compactRefinedCrystal = new BlockCompactCrystalRefined(3008, Material.glass).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("refinecCrystalBlock");
 
         crystalStage1 = new BlockCrystalOre(2006, 0).setUnlocalizedName("crystalStage1");
         crystalStage2 = new BlockCrystalOre(2007, 1).setUnlocalizedName("crystalStage2");
@@ -56,10 +56,10 @@ public class Blocks {
 		GameRegistry.registerBlock(refiningTable, "refiningTable");
         GameRegistry.registerBlock(energyStorageUnit, "energyStorageUnit");
         GameRegistry.registerBlock(crystalChest, "crystalChest");
-        GameRegistry.registerBlock(compactRawCrystal, "compactRawCrystal");
-		GameRegistry.registerBlock(Blocks.compactRawCrystal, ItemBlockCompactRawCrystal.class);
-		GameRegistry.registerBlock(Blocks.compactRefinedCrystal, "compactRefiend");
-		GameRegistry.registerBlock(Blocks.compactRefinedCrystal, ItemBlockCompactRefinedCrystal.class);
+        //GameRegistry.registerBlock(compactRawCrystal, "compactRawCrystal");
+		//GameRegistry.registerBlock(Blocks.compactRawCrystal, ItemBlockCompactRawCrystal.class);
+		//GameRegistry.registerBlock(Blocks.compactRefinedCrystal, "compactRefiend");
+		//GameRegistry.registerBlock(Blocks.compactRefinedCrystal, ItemBlockCompactRefinedCrystal.class);
 		
         GameRegistry.registerBlock(crystalStage1, ItemBlockCrystalOre.class, "crystalStage1 [WIP]");
         GameRegistry.registerBlock(crystalStage2, ItemBlockCrystalOre.class, "crystalStage2 [WIP]");
