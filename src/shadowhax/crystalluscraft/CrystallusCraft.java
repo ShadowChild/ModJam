@@ -49,7 +49,7 @@ public class CrystallusCraft {
 
         NetworkRegistry.instance().registerGuiHandler(instance, new GuiHandler());
         GameRegistry.registerWorldGenerator(new OreGen());
-        RecipeHandler.registerRecipes();
+       // RecipeHandler.registerRecipes();
 	}
 	
 	@Mod.EventHandler
