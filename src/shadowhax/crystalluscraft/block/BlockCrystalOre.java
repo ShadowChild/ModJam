@@ -11,11 +11,11 @@ import shadowhax.crystalluscraft.CrystallusCraft;
 import shadowhax.crystalluscraft.block.tile.TileEntityCrystalOre;
 
 import java.util.List;
+import java.util.Random;
 
 public class BlockCrystalOre extends BlockContainer {
 
     public int growthStage;
-    public String name;
 
     public BlockCrystalOre(int id, int growthStage) {
 
@@ -57,5 +57,22 @@ public class BlockCrystalOre extends BlockContainer {
     public int getRenderType() {
 
         return -1;
+    }
+
+    @Override
+    public void updateTick(World world, int x, int y, int z, Random random) {
+
+        int meta = world.getBlockMetadata(x, y, z);
+
+        if(!world.isRemote) {
+
+            System.out.println("tick");
+
+            if(this.blockID != Blocks.crystalStage4.blockID) {
+
+                world.setBlock(x, y, z, this.blockID + 1, meta, 2);
+                System.out.println("update");
+            }
+        }
     }
 }
