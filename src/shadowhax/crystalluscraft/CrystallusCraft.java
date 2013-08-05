@@ -8,16 +8,19 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import shadowhax.crystalluscraft.block.Blocks;
 import shadowhax.crystalluscraft.core.handler.GuiHandler;
+import shadowhax.crystalluscraft.core.handler.RecipeHandler;
 import shadowhax.crystalluscraft.core.proxy.ClientProxy;
 import shadowhax.crystalluscraft.core.proxy.CommonProxy;
 import shadowhax.crystalluscraft.core.util.Config;
 import shadowhax.crystalluscraft.core.util.CrystallusCraftRegistry;
 import shadowhax.crystalluscraft.core.util.Reference;
 import shadowhax.crystalluscraft.item.Items;
+import shadowhax.crystalluscraft.worldgen.OreGen;
 
 import java.util.Arrays;
 
@@ -45,15 +48,8 @@ public class CrystallusCraft {
 		ClientProxy.render();
 
         NetworkRegistry.instance().registerGuiHandler(instance, new GuiHandler());
-
-        CrystallusCraftRegistry.addShapedRecipe(new ItemStack(Items.refinedCrystal, 3, 1),
-            " xx  ",
-            " xx  ",
-            " xxx ",
-            "  xx ",
-            "  xx ",
-            'x', new ItemStack(Items.rawCrystal, 1, 1)
-        );
+        GameRegistry.registerWorldGenerator(new OreGen());
+        RecipeHandler.registerRecipes();
 	}
 	
 	@Mod.EventHandler
