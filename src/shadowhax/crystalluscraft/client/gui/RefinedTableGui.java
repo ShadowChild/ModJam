@@ -16,7 +16,6 @@ public class RefinedTableGui extends GuiContainer {
 		super(new ContainerRefiningTable(inventoryplayer, world, i, j, k));
 	}
 
-
     @Override
     protected void drawGuiContainerForegroundLayer(int par1, int par2) {
 		fontRenderer.drawString("Refining Table", 0, -12, 0x404040);
