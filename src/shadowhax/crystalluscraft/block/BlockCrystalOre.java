@@ -15,6 +15,7 @@ import java.util.List;
 public class BlockCrystalOre extends BlockContainer {
 
     public int growthStage;
+    public String name;
 
     public BlockCrystalOre(int id, int growthStage) {
 

@@ -28,9 +28,9 @@ public class RenderCrystalOre extends TileEntitySpecialRenderer {
     @Override
     public void renderTileEntityAt(TileEntity tileentity, double d0, double d1, double d2, float f) {
 
-        int meta = tileentity.blockMetadata;
-
         if(tileentity.blockType instanceof BlockCrystalOre) {
+
+            int meta = tileentity.worldObj.getBlockMetadata(tileentity.xCoord, tileentity.yCoord, tileentity.zCoord);
 
             switch(((BlockCrystalOre)tileentity.blockType).growthStage) {
 
