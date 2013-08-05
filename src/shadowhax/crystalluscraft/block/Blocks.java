@@ -3,6 +3,7 @@ package shadowhax.crystalluscraft.block;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import shadowhax.crystalluscraft.block.item.ItemBlockCrystalOre;
 import shadowhax.crystalluscraft.block.tile.TileEntityCrystalChest;
 import shadowhax.crystalluscraft.block.tile.TileEntityCrystalOre;
@@ -17,6 +18,7 @@ public class Blocks {
     public static Block energyStorageUnit;
 	public static Block crystalChest;
     public static BlockCrystalOre crystalOre; // Needed for rendering
+    public static Block compactRawCrystal;
 	
 	public static void init() {
 		
@@ -33,6 +35,7 @@ public class Blocks {
         energyStorageUnit = new BlockEnergyStorageUnit(Config.energyStorageUnitID).setUnlocalizedName("energyStorageUnit");
         crystalChest = new BlockCrystalChest(3000, 0).setUnlocalizedName("no");
         crystalOre = (BlockCrystalOre)new BlockCrystalOre(Config.crystalOreID).setUnlocalizedName("crystalOre");
+        compactRawCrystal = new BlockCompactCrystalRaw(2005, Material.glass).setUnlocalizedName("rawCrystalBlock");
 	}
 	
 	public static void registerBlocks() {
@@ -41,6 +44,7 @@ public class Blocks {
 		GameRegistry.registerBlock(refiningTable, "refiningTable");
         GameRegistry.registerBlock(energyStorageUnit, "energyStorageUnit");
         GameRegistry.registerBlock(crystalChest, "crystalChest");
+        GameRegistry.registerBlock(compactRawCrystal, "compactRawCrystal");
 
         GameRegistry.registerBlock(crystalOre, ItemBlockCrystalOre.class, "crystalOre");
 	}
