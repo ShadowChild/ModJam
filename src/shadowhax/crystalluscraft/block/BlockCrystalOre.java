@@ -1,6 +1,7 @@
 package shadowhax.crystalluscraft.block;
 
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -9,6 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import shadowhax.crystalluscraft.CrystallusCraft;
 import shadowhax.crystalluscraft.block.tile.TileEntityCrystalOre;
+import shadowhax.crystalluscraft.item.Items;
 
 import java.util.List;
 import java.util.Random;
@@ -26,6 +28,11 @@ public class BlockCrystalOre extends BlockContainer {
         this.growthStage = growthStage;
     }
 
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return Items.rawCrystal.itemID;
+    }
+    
     @Override
     public TileEntity createNewTileEntity(World world) {
 

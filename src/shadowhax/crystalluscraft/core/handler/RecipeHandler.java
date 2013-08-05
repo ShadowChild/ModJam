@@ -122,7 +122,7 @@ public class RecipeHandler {
                 'x', new ItemStack(Items.rawCrystal), 'y', new ItemStack(Item.enderPearl)
             );
         
-        CrystallusCraftRegistry.addShapedRecipe(new ItemStack(Items.warpCrystal), "xxx","xyx","xxx",
+        CrystallusCraftRegistry.addShapedRecipe(new ItemStack(Blocks.warpBlock), "xxx","xyx","xxx",
                 'x', new ItemStack(Block.stone), 'y', new ItemStack(Items.warpCrystal)
             );
 	}
