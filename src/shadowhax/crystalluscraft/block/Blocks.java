@@ -3,7 +3,9 @@ package shadowhax.crystalluscraft.block;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+import shadowhax.crystalluscraft.block.item.ItemBlockCrystalOre;
 import shadowhax.crystalluscraft.block.tile.TileEntityCrystalChest;
+import shadowhax.crystalluscraft.block.tile.TileEntityCrystalOre;
 import shadowhax.crystalluscraft.block.tile.TileEntityEnergyStorage;
 import shadowhax.crystalluscraft.block.tile.TileEntityWarpPad;
 import shadowhax.crystalluscraft.core.util.Config;
@@ -14,6 +16,7 @@ public class Blocks {
 	public static Block refiningTable;
     public static Block energyStorageUnit;
 	public static Block crystalChest;
+    public static BlockCrystalOre crystalOre; // Needed for rendering
 	
 	public static void init() {
 		
@@ -29,6 +32,7 @@ public class Blocks {
 		refiningTable = new BlockRefiningTable(Config.refiningTableID).setUnlocalizedName("refingingtable");
         energyStorageUnit = new BlockEnergyStorageUnit(Config.energyStorageUnitID).setUnlocalizedName("energyStorageUnit");
         crystalChest = new BlockCrystalChest(3000, 0).setUnlocalizedName("no");
+        crystalOre = (BlockCrystalOre)new BlockCrystalOre(Config.crystalOreID).setUnlocalizedName("crystalOre");
 	}
 	
 	public static void registerBlocks() {
@@ -37,6 +41,8 @@ public class Blocks {
 		GameRegistry.registerBlock(refiningTable, "refiningTable");
         GameRegistry.registerBlock(energyStorageUnit, "energyStorageUnit");
         GameRegistry.registerBlock(crystalChest, "crystalChest");
+
+        GameRegistry.registerBlock(crystalOre, ItemBlockCrystalOre.class, "crystalOre");
 	}
 	
 	public static void addNames() {
@@ -48,5 +54,6 @@ public class Blocks {
 		GameRegistry.registerTileEntity(TileEntityWarpPad.class, "warpBlock");
         GameRegistry.registerTileEntity(TileEntityEnergyStorage.class, "energyStorageUnit");
         GameRegistry.registerTileEntity(TileEntityCrystalChest.class, "crystalChest");
+        GameRegistry.registerTileEntity(TileEntityCrystalOre.class, "crystalOre");
 	}
 }

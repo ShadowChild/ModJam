@@ -15,6 +15,7 @@ public class Config {
     public static int warpBlockID;
     public static int energyStorageUnitID;
     public static int refiningTableID;
+    public static int crystalOreID;
 
     //Items
     public static int rawCrystalID;
@@ -30,7 +31,7 @@ public class Config {
     public static int guiCrystalBookID;
 
     public static void createConfig(FMLPreInitializationEvent event) {
-        Reference.logger.info(Reference.MOD_NAME + "Configuration Detected!"); // This is stupid //you're stupid >>
+        Reference.logger.info(Reference.MOD_NAME + "Configuration Detected!");
         Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 
         try {
@@ -41,6 +42,7 @@ public class Config {
             warpBlockID = config.get(blockValues, "Warp Pad Block ID", 1337).getInt();
             energyStorageUnitID = config.get(blockValues, "Energy Storage Block ID", 1338).getInt();
             refiningTableID = config.get(blockValues, "Refining Table Block ID", 1339).getInt();
+            crystalOreID = config.get(blockValues, "Crystal Ore Block ID", 1340).getInt();
 
             rawCrystalID = config.get(itemValues, "Raw Crystal Item ID", 5337).getInt();
             warpCrystalID = config.get(itemValues, "Warp Crystal Item ID", 5338).getInt();
@@ -60,6 +62,6 @@ public class Config {
             if (config.hasChanged())
                 config.save();
         }
-        Reference.logger.info(Reference.MOD_NAME + "Config Loaded!"); // Still Stupid
+        Reference.logger.info(Reference.MOD_NAME + "Config Loaded!");
     }
 }

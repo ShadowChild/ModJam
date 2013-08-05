@@ -30,9 +30,9 @@ public class BlockWarpCrystal extends BlockContainer
     }
     
     public boolean isOpaqueCube() {
-        return false;
-    }
-    
+    return false;
+}
+
     public boolean renderAsNormalBlock() {
         return false;
     }
