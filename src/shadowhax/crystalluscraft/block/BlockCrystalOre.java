@@ -11,6 +11,7 @@ import shadowhax.crystalluscraft.CrystallusCraft;
 import shadowhax.crystalluscraft.block.tile.TileEntityCrystalOre;
 
 import java.util.List;
+import java.util.Random;
 
 public class BlockCrystalOre extends BlockContainer {
 
@@ -45,5 +46,44 @@ public class BlockCrystalOre extends BlockContainer {
     @Override
     public boolean renderAsNormalBlock() {
         return false;
+    }
+
+    @Override
+    public int getRenderType() {
+
+        return -1;
+    }
+
+//    @Override
+//    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
+//
+//        TileEntityCrystalOre tile = (TileEntityCrystalOre)world.getBlockTileEntity(x, y, z);
+//
+//        if(tile != null) {
+//
+//            if(tile.growthStage != 1) {
+//
+//                tile.growthStage = 1;
+//            }
+//        }
+//
+//        return false;
+//    }
+
+    @Override
+    public void updateTick(World world, int x, int y, int z, Random par5Random) {
+
+        System.out.println("tick");
+
+        TileEntityCrystalOre tile = (TileEntityCrystalOre)world.getBlockTileEntity(x, y, z);
+
+        if(tile != null) {
+
+            System.out.println("tile is not null");
+            tile.growthStage++;
+            System.out.println(tile.growthStage);
+            tile.validate();
+            world.setBlockTileEntity(x, y, z, tile);
+        }
     }
 }

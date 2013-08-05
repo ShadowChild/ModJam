@@ -20,4 +20,9 @@ public class TileEntityCrystalOre extends TileEntity {
         super.writeToNBT(nbt);
         nbt.setInteger("GrowthStage", growthStage);
     }
+
+    public void updateGrowthStage() {
+
+        growthStage++;
+    }
 }
