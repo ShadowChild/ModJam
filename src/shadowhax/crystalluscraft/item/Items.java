@@ -1,5 +1,6 @@
 package shadowhax.crystalluscraft.item;
 
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
 import shadowhax.crystalluscraft.core.util.Config;
 
@@ -8,6 +9,7 @@ public class Items {
 	public static void init() {
 		
 		addItems();
+		addNames();
 	}
 
 	public static Item rawCrystal;
@@ -23,9 +25,15 @@ public class Items {
 		rawCrystal = new ItemRawCrystal(Config.rawCrystalID).setUnlocalizedName("rawCrystal");
 		warpCrystal = new ItemLinkingCrystal(Config.warpCrystalID).setUnlocalizedName("warping");
 		refinedCrystal = new ItemRefinedCrystal(Config.refinedCrystalID).setUnlocalizedName("refinedCrystal");
-		crystalBook = new ItemCrystalBook(Config.crystalBookID).setUnlocalizedName("crystalBook");
+		crystalBook = new ItemCrystalBook(Config.crystalBookID).setUnlocalizedName("Crystal Book");
         energyRelease = new ItemEnergyDestoyer(Config.energyDestroyerID).setUnlocalizedName("energyDestroyer");
         chestLink = new ItemChestLink(Config.chestLinkID).setUnlocalizedName("chestLink");
         energyCell = new ItemEnergyCell(Config.energyCellID).setUnlocalizedName("energyCell");
+	}
+	
+	public static void addNames() {
+		LanguageRegistry.addName(crystalBook, "Crystal Book");
+		LanguageRegistry.addName(energyRelease, "Energy Remover");
+		LanguageRegistry.addName(energyCell, "Energy Cell");
 	}
 }

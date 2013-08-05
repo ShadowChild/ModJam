@@ -22,7 +22,7 @@ public class ItemRefinedCrystal extends Item {
 		this.hasSubtypes = true;
 	}
 	
-	public static String[] refinedCrystalNames = new String[] {"Simplex", "Lux", "Ros", "Natura", "Obitus", "Ignis", "Zephyr"};
+	public static String[] refinedCrystalNames = new String[] {"Simplex", "Lux", "Ros", "Natura", "Obitus", "Ignis", "Zephyrus"};
 	private Icon[] icons = new Icon[256];
 	
     @Override
@@ -40,7 +40,7 @@ public class ItemRefinedCrystal extends Item {
     	this.icons[3] = ir.registerIcon("crystalluscraft:Refined Natura Crystal");
     	this.icons[4] = ir.registerIcon("crystalluscraft:Refined Obitus Crystal");
     	this.icons[5] = ir.registerIcon("crystalluscraft:Refined Ignis Crystal");
-    	this.icons[6] = ir.registerIcon("crystalluscraft:Refined Zephyr Crystal");
+    	this.icons[6] = ir.registerIcon("crystalluscraft:Refined Zephyrus Crystal");
     }
     
     @SideOnly(Side.CLIENT)

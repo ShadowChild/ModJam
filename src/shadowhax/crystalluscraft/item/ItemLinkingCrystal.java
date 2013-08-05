@@ -90,8 +90,8 @@ public class ItemLinkingCrystal extends Item{
     @Override
     public void registerIcons(IconRegister ir) {
     	
-    	this.icons[1] = ir.registerIcon("crystalluscraft:linked");
-    	this.icons[0] = ir.registerIcon("crystalluscraft:unlinked");
+    	this.icons[1] = ir.registerIcon("crystalluscraft:Linked Warp Crystal");
+    	this.icons[0] = ir.registerIcon("crystalluscraft:Unlinked Warp Crystal");
     }
     
     @Override
