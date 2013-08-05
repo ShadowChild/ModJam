@@ -14,30 +14,32 @@ import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
-public class BlockCompactCrystalRaw extends Block
-{
+public class BlockCompactCrystalRaw extends Block {
     @SideOnly(Side.CLIENT)
-	private Icon[] icons = new Icon[256];
+    protected Icon[] icons = new Icon[7];
 
     public BlockCompactCrystalRaw(int par1, Material material) {
         super(par1, Material.glass);
         this.setCreativeTab(CrystallusCraft.tab);
     }
+    
+    @SideOnly(Side.CLIENT)
+    public Icon getIcon(int par1, int par2) {
+        return this.icons[par2 % this.icons.length];
+    }  
 
-    public int damageDropped(int par1)
-    {
+    public int damageDropped(int par1) {
         return par1;
     }
-
+    
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List)
-    {
+    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
         for (int j = 0; j < 7; ++j)
         {
             par3List.add(new ItemStack(par1, 1, j));
         }
     }
-
+    
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister ir) {   	
     	this.icons[0] = ir.registerIcon("crystalluscraft:Raw Simplex Block");
