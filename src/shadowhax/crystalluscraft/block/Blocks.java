@@ -10,6 +10,8 @@ import shadowhax.crystalluscraft.block.tile.TileEntityCrystalOre;
 import shadowhax.crystalluscraft.block.tile.TileEntityEnergyStorage;
 import shadowhax.crystalluscraft.block.tile.TileEntityWarpPad;
 import shadowhax.crystalluscraft.core.util.Config;
+import shadowhax.crystalluscraft.item.ItemBlockCompactRawCrystal;
+import shadowhax.crystalluscraft.item.ItemBlockCompactRefinedCrystal;
 
 public class Blocks {
 	
@@ -18,6 +20,7 @@ public class Blocks {
     public static Block energyStorageUnit;
 	public static Block crystalChest;
     public static Block compactRawCrystal;
+    public static Block compactRefinedCrystal;
 
     public static Block crystalStage1;
     public static Block crystalStage2;
@@ -38,12 +41,13 @@ public class Blocks {
 		refiningTable = new BlockRefiningTable(Config.refiningTableID).setUnlocalizedName("refingingtable");
         energyStorageUnit = new BlockEnergyStorageUnit(Config.energyStorageUnitID).setUnlocalizedName("energyStorageUnit");
         crystalChest = new BlockCrystalChest(3000, 0).setUnlocalizedName("no");
-        compactRawCrystal = new BlockCompactCrystalRaw(2005, Material.glass).setUnlocalizedName("rawCrystalBlock");
+        compactRawCrystal = new BlockCompactCrystalRaw(3005, Material.glass).setUnlocalizedName("rawCrystalBlock");
+        compactRefinedCrystal = new BlockCompactCrystalRefined(3008, Material.glass).setUnlocalizedName("refinecCrystalBlock");
 
-        crystalStage1 = new BlockCrystalOre(2006, 0).setUnlocalizedName("crystalStage1");
-        crystalStage2 = new BlockCrystalOre(2007, 1).setUnlocalizedName("crystalStage2");
-        crystalStage3 = new BlockCrystalOre(2008, 2).setUnlocalizedName("crystalStage3");
-        crystalStage4 = new BlockCrystalOre(2009, 3).setUnlocalizedName("crystalStage4");
+     //   crystalStage1 = new BlockCrystalOre(2006, 0).setUnlocalizedName("crystalStage1");
+      //  crystalStage2 = new BlockCrystalOre(2007, 1).setUnlocalizedName("crystalStage2");
+       // crystalStage3 = new BlockCrystalOre(2008, 2).setUnlocalizedName("crystalStage3");
+        //crystalStage4 = new BlockCrystalOre(2009, 3).setUnlocalizedName("crystalStage4");
 	}
 
 	public static void registerBlocks() {
@@ -53,16 +57,15 @@ public class Blocks {
         GameRegistry.registerBlock(energyStorageUnit, "energyStorageUnit");
         GameRegistry.registerBlock(crystalChest, "crystalChest");
         GameRegistry.registerBlock(compactRawCrystal, "compactRawCrystal");
-
-        GameRegistry.registerBlock(crystalStage1, ItemBlockCrystalOre.class, "crystalStage1");
-        GameRegistry.registerBlock(crystalStage2, ItemBlockCrystalOre.class, "crystalStage2");
-        GameRegistry.registerBlock(crystalStage3, ItemBlockCrystalOre.class, "crystalStage3");
-        GameRegistry.registerBlock(crystalStage4, ItemBlockCrystalOre.class, "crystalStage4");
+		GameRegistry.registerBlock(Blocks.compactRawCrystal, ItemBlockCompactRawCrystal.class);
+		GameRegistry.registerBlock(Blocks.compactRefinedCrystal, "compactRefiend");
+		GameRegistry.registerBlock(Blocks.compactRefinedCrystal, ItemBlockCompactRefinedCrystal.class);
 	}
 	
 	public static void addNames() {
 		
 		LanguageRegistry.addName(warpBlock, "Warp Block");
+		LanguageRegistry.addName(crystalChest, "Crystal Chest[WIP]");
 	}
 	
 	public static void registerTileEntities() {

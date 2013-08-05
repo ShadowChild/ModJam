@@ -34,7 +34,6 @@ public class Items {
 	}
 	
 	public static void addNames() {
-		GameRegistry.registerBlock(Blocks.compactRawCrystal, ItemBlockCompactRawCrystal.class);
 		LanguageRegistry.addName(crystalBook, "Crystal Book");
 		LanguageRegistry.addName(energyRelease, "Energy Remover");
 		LanguageRegistry.addName(energyCell, "Energy Cell");
