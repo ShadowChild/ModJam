@@ -1,7 +1,9 @@
 package shadowhax.crystalluscraft.item;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
+import shadowhax.crystalluscraft.block.Blocks;
 import shadowhax.crystalluscraft.core.util.Config;
 
 public class Items {
@@ -32,6 +34,7 @@ public class Items {
 	}
 	
 	public static void addNames() {
+		GameRegistry.registerBlock(Blocks.compactRawCrystal, ItemBlockCompactRawCrystal.class);
 		LanguageRegistry.addName(crystalBook, "Crystal Book");
 		LanguageRegistry.addName(energyRelease, "Energy Remover");
 		LanguageRegistry.addName(energyCell, "Energy Cell");
