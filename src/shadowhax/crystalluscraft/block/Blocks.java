@@ -56,11 +56,8 @@ public class Blocks {
 		GameRegistry.registerBlock(refiningTable, "refiningTable");
         GameRegistry.registerBlock(energyStorageUnit, "energyStorageUnit");
         GameRegistry.registerBlock(crystalChest, "crystalChest");
-        GameRegistry.registerBlock(compactRawCrystal, "compactRawCrystal");
-		GameRegistry.registerBlock(Blocks.compactRawCrystal, ItemBlockCompactRawCrystal.class);
-		GameRegistry.registerBlock(Blocks.compactRefinedCrystal, "compactRefiend");
-		
-		GameRegistry.registerBlock(Blocks.compactRefinedCrystal, ItemBlockCompactRefinedCrystal.class);
+		GameRegistry.registerBlock(compactRawCrystal, ItemBlockCompactRawCrystal.class, "rawCrystalBlock");	
+		GameRegistry.registerBlock(compactRefinedCrystal, ItemBlockCompactRefinedCrystal.class, "refinedCrystalBlock");
 		
         GameRegistry.registerBlock(crystalStage1, ItemBlockCrystalOre.class, "crystalStage1 [WIP]");
         GameRegistry.registerBlock(crystalStage2, ItemBlockCrystalOre.class, "crystalStage2 [WIP]");
