@@ -15,39 +15,22 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
 public class BlockCompactCrystalRaw extends Block {
-    @SideOnly(Side.CLIENT)
-    protected Icon[] icons = new Icon[7];
+	@SideOnly(Side.CLIENT)
+	private Icon[] iconArray;
 
-    public BlockCompactCrystalRaw(int par1, Material material) {
-        super(par1, Material.glass);
-        this.setCreativeTab(CrystallusCraft.tab);
-    }
-    
-    @SideOnly(Side.CLIENT)
-    public Icon getIcon(int par1, int par2) {
-        return this.icons[par2 % this.icons.length];
-    }  
+	public BlockCompactCrystalRaw(int id, Material material) {
+		super(id, material);
+		this.setCreativeTab(CrystallusCraft.tab);
+	}
 
-    public int damageDropped(int par1) {
-        return par1;
-    }
-    
-    @SideOnly(Side.CLIENT)
-    public void getSubBlocks(int par1, CreativeTabs par2CreativeTabs, List par3List) {
-        for (int j = 0; j < 7; ++j)
-        {
-            par3List.add(new ItemStack(par1, 1, j));
-        }
-    }
-    
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister ir) {   	
-    	this.icons[0] = ir.registerIcon("crystalluscraft:Raw Simplex Block");
-    	this.icons[1] = ir.registerIcon("crystalluscraft:Raw Lux Block");
-    	this.icons[2] = ir.registerIcon("crystalluscraft:Raw Ros Block");
-    	this.icons[3] = ir.registerIcon("crystalluscraft:Raw Natura Block");
-    	this.icons[4] = ir.registerIcon("crystalluscraft:Raw Obitus Block");
-    	this.icons[5] = ir.registerIcon("crystalluscraft:Raw Ignis Block");
-    	this.icons[6] = ir.registerIcon("crystalluscraft:Raw Zephyrus Block");
-    }
+	public int damageDropped(int meta) {
+		return meta;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void getSubBlocks(int par1, CreativeTabs tab, List list) {
+		for (int j = 0; j < 7; ++j) {
+			list.add(new ItemStack(par1, 1, j));
+		}
+	}
 }
