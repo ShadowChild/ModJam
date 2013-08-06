@@ -17,7 +17,7 @@ import net.minecraft.world.IBlockAccess;
 
 public class BlockCompactCrystalRaw extends Block {
 	@SideOnly(Side.CLIENT)
-	private Icon[] iconArray = new Icon[7];
+	private Icon[] iconArray;
 
 	public BlockCompactCrystalRaw(int id, Material material) {
 		super(id, material);
@@ -35,6 +35,7 @@ public class BlockCompactCrystalRaw extends Block {
 		}
 	}
 	
+    @SideOnly(Side.CLIENT)
     public Icon getIcon(int par1, int par2)
     {
         return this.iconArray[par2 % this.iconArray.length];
@@ -42,13 +43,13 @@ public class BlockCompactCrystalRaw extends Block {
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister ir) {
-		     
-		this.iconArray[0] = ir.registerIcon("crystalluscraft:Refined Simplex Block");		     
-		this.iconArray[1] = ir.registerIcon("crystalluscraft:Refined Lux Block");		     
-		this.iconArray[2] = ir.registerIcon("crystalluscraft:Refined Ros Block");		     
-		this.iconArray[3] = ir.registerIcon("crystalluscraft:Refined Natura Block");		     
-		this.iconArray[4] = ir.registerIcon("crystalluscraft:Refined Obitus Block");	     
-		this.iconArray[5] = ir.registerIcon("crystalluscraft:Refined Ignis Block");	     
-		this.iconArray[6] = ir.registerIcon("crystalluscraft:Refined Zephyrus Block");
+		iconArray = new Icon[7];
+		this.iconArray[0] = ir.registerIcon("crystalluscraft:Raw Simplex Block");		     
+		this.iconArray[1] = ir.registerIcon("crystalluscraft:Raw Lux Block");		     
+		this.iconArray[2] = ir.registerIcon("crystalluscraft:Raw Ros Block");		     
+		this.iconArray[3] = ir.registerIcon("crystalluscraft:Raw Natura Block");		     
+		this.iconArray[4] = ir.registerIcon("crystalluscraft:Raw Obitus Block");	     
+		this.iconArray[5] = ir.registerIcon("crystalluscraft:Raw Ignis Block");	     
+		this.iconArray[6] = ir.registerIcon("crystalluscraft:Raw Zephyrus Block");
 	}
 }

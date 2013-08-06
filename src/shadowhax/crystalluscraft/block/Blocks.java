@@ -40,14 +40,14 @@ public class Blocks {
 		warpBlock = new BlockWarpCrystal(Config.warpBlockID).setUnlocalizedName("warpcrystal");
 		refiningTable = new BlockRefiningTable(Config.refiningTableID).setHardness(2.5F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("workbench").setUnlocalizedName("refingingtable");
         energyStorageUnit = new BlockEnergyStorageUnit(Config.energyStorageUnitID).setHardness(0.5F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("energyStorageUnit");
-        crystalChest = new BlockCrystalChest(3000, 0).setHardness(22.5F).setResistance(1000.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("crystalChest");
-        compactRawCrystal = new BlockCompactCrystalRaw(3005, Material.glass).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("rawCrystalBlock");
-        compactRefinedCrystal = new BlockCompactCrystalRefined(3008, Material.glass).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("refinecCrystalBlock");
+        crystalChest = new BlockCrystalChest(Config.CrystalChestID, 0).setHardness(22.5F).setResistance(1000.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("crystalChest");
+        compactRawCrystal = new BlockCompactCrystalRaw(Config.compactRawCrystalBlockID, Material.glass).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("rawCrystalBlock");
+        compactRefinedCrystal = new BlockCompactCrystalRefined(Config.compactRefinedCrystalBlockID, Material.glass).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundGlassFootstep).setUnlocalizedName("refinecCrystalBlock");
 
-        crystalStage1 = new BlockCrystalOre(2006, 0).setUnlocalizedName("crystalStage1");
-        crystalStage2 = new BlockCrystalOre(2007, 1).setUnlocalizedName("crystalStage2");
-        crystalStage3 = new BlockCrystalOre(2008, 2).setUnlocalizedName("crystalStage3");
-        crystalStage4 = new BlockCrystalOre(2009, 3).setUnlocalizedName("crystalStage4");
+        crystalStage1 = new BlockCrystalOre(Config.crystalStage1ID, 0).setUnlocalizedName("crystalStage1");
+        crystalStage2 = new BlockCrystalOre(Config.crystalStage2ID, 1).setUnlocalizedName("crystalStage2");
+        crystalStage3 = new BlockCrystalOre(Config.crystalStage3ID, 2).setUnlocalizedName("crystalStage3");
+        crystalStage4 = new BlockCrystalOre(Config.crystalStage4ID, 3).setUnlocalizedName("crystalStage4");
 	}
 
 	public static void registerBlocks() {
