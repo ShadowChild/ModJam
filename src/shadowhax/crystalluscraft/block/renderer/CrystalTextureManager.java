@@ -8,6 +8,6 @@ public class CrystalTextureManager {
 
     public static ResourceLocation getRLForCrystal(int growthStage, int meta) {
 
-        return new ResourceLocation("crystalluscraft:/textures/crystals/stage" + growthStage + "/" + crystalNames[meta] + ".png");
+        return new ResourceLocation("crystalluscraft:textures/crystals/stage" + growthStage + "/" + crystalNames[meta] + ".png");
     }
 }

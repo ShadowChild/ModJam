@@ -16,7 +16,7 @@ public class RenderWarpPad extends TileEntitySpecialRenderer {
     }
        
     public void renderAModelAt(TileEntityWarpPad tileentity1, double d, double d1, double d2, float f) {  
-    	this.func_110628_a(new ResourceLocation("crystalluscraft:/textures/tileentity/warppad.png"));
+    	this.func_110628_a(new ResourceLocation("crystalluscraft:textures/tileentity/warppad.png"));
         GL11.glPushMatrix();
         GL11.glTranslatef((float)d + 0.5F, (float)d1 + 1.5F, (float)d2 + 0.5F);
         GL11.glScalef(1.0F, -1F, -1F);

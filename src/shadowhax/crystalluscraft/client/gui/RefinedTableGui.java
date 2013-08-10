@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 public class RefinedTableGui extends GuiContainer {
 
-	private static final ResourceLocation guiTexture = new ResourceLocation("crystalluscraft:/textures/gui/refiningtable.png");
+	private static final ResourceLocation guiTexture = new ResourceLocation("crystalluscraft:textures/gui/refiningtable.png");
 
 	public RefinedTableGui(InventoryPlayer inventoryplayer, World world, int i, int j, int k) {
 		super(new ContainerRefiningTable(inventoryplayer, world, i, j, k));
